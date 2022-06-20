@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,9 @@ Route::get("/projects", [HomeController::class, 'projects'])->name("projects");
 Route::get("/products", [HomeController::class, 'products'])->name("products");
 Route::get("/careers", [HomeController::class, 'careers'])->name("careers");
 Route::get("/contacts", [HomeController::class, 'contacts'])->name("contacts");
+
+// contact us form
+Route::post("/contact", [ContactUsController::class, 'contact'])->name("contact");
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {

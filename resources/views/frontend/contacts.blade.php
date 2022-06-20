@@ -2458,19 +2458,28 @@
             <!-- satrt content  -->
             <div class="content">
                 <div class="row">
-                    <form action="">
+                    <form action="{{ route('contact') }}" method="POST" id="contact-form">
+                        @csrf
                         <label class="titl_form" data-aos="fade-in" data-aos-duration="1000"
                             data-aos-delay="500">Have A Question? Contact Us</label>
-                        <input autocomplete="off" placeholder="Enter your name..." type="text" name=""
-                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
-                        <input autocomplete="off" placeholder="Your Email" type="email" name=""
-                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
-                        <input autocomplete="off" placeholder="Subject (optional)" type="text" name=""
-                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
-                        <textarea placeholder="Here goes your message" name="" id="" cols="30" rows="10"
-                            data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"></textarea>
-                        <input type="submit" class="btn_form" value="Send Message" data-aos="fade-in"
-                            data-aos-duration="700" data-aos-delay="500">
+                        <input autocomplete="off" placeholder="Enter your name..." type="text" name="name"
+                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
+                            required data-parsley-required-message="The name is required">
+
+                        <input autocomplete="off" placeholder="Your Email" type="email" name="email"
+                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
+                            required data-parsley-required-message="The email is required">
+
+                        <input autocomplete="off" placeholder="Subject (optional)" type="text" name="subject"
+                            id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
+                            required data-parsley-required-message="The subject is required">
+
+                        <textarea placeholder="Here goes your message" name="message" id="" cols="30" rows="10"
+                            data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
+                            required data-parsley-required-message="The name is required"></textarea>
+
+                        <button type="submit" class="btn_form" data-aos="fade-in"
+                        data-aos-duration="700" data-aos-delay="500">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -2487,6 +2496,12 @@
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/aos.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').parsley();
+        });
+    </script>
 </body>
 
 </html>

@@ -108,10 +108,12 @@ class ProjectsController extends Controller
         $project = Project::findorfail($id);
         $project->gallery = json_decode($project->gallery,true);
         $result = [];
-        foreach ($project->gallery as $image){
-            $result[]= (int)$image;
+        if(!empty($project->gallery)){
+            foreach ($project->gallery as $image){
+                $result[]= (int)$image;
+            }
+            $project->gallery = json_encode($result);
         }
-        $project->gallery = json_encode($result);
         return view('admin.components.project_type.project.edit',compact('project','categories','project_types'));
     }
 
