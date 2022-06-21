@@ -71,6 +71,12 @@
                             <span>Banners</span>
                         </a>
                     </li>
+                    <li class="{{areActiveRoutes(['sliders.*'])}}">
+                        <a href="{{route("sliders.index")}}" >
+                            <i class="ti-gallery"></i>
+                            <span>Sliders</span>
+                        </a>
+                    </li>
                     <li class="{{areActiveRoutes(['settings.*'])}}">
                         <a href="{{route("settings.index")}}" >
                             <i class="fa fa-gear"></i>

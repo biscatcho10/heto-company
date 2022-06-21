@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::get('/map-url', 'DashboardController@mapData')->name("mapData");
     Route::get('/browser-usage', 'DashboardController@browserUsage')->name("browserUsage");
     Route::resource('careers', 'CareersController')->except('show');
+    Route::resource('sliders', 'SlidersController')->except('show');
+    Route::post('sliders/reorder', 'SlidersController@reorder')->name("sliders-reorder");
     Route::post('careers/show', 'CareersController@show')->name('careers.show');
     Route::post('careers/filter', 'CareersController@filter')->name('careers.filter');
     Route::get('careers/datatable', 'CareersController@datatable');
