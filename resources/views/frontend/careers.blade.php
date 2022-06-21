@@ -52,39 +52,7 @@
             </ul>
         </div>
         <!-- Navigation Desctop -->
-        <nav class="navbar-desctop visible-md visible-lg">
-            <div class="container_">
-                <a href="#top" class="logo_header">
-                    <img src="{{ asset('assets/svg/logo.svg') }}" alt="" />
-                </a>
-                <div class="list_icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="app_links">
-                    <div class="ovrlay_div"></div>
-                    <ul class="nav navbar-desctop-menu">
-                        <li>
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="./projects.html">Projects</a>
-                        </li>
-                        <li>
-                            <a href="./products.html">products</a>
-                        </li>
-                        <li class="active">
-                            <a href="./careers.html">careers</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('frontend.layouts.nav')
     </header>
     <!-- / Header -->
 

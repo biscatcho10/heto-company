@@ -24,7 +24,7 @@ Route::get("/about", [HomeController::class, 'about'])->name("about");
 Route::get("/projects", [HomeController::class, 'projects'])->name("projects");
 Route::get("/products", [HomeController::class, 'products'])->name("products");
 Route::get("/careers", [HomeController::class, 'careers'])->name("careers");
-Route::get("/contacts", [HomeController::class, 'contacts'])->name("contacts");
+Route::get("/contact-us", [HomeController::class, 'contacts'])->name("contact.us");
 
 // contact us form
 Route::post("/contact", [ContactUsController::class, 'contact'])->name("contact");

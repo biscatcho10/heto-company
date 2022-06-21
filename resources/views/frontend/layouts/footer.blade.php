@@ -7,22 +7,22 @@
             <div class="linke">
                 <ul class="d-flex align-items-center justify-content-center">
                     <li class="active">
-                        <a href="./index.html">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </li>
                     <li>
-                        <a href="./about.html">About</a>
+                        <a href="{{ route('about') }}">About</a>
                     </li>
                     <li>
-                        <a href="./projects.html">Projects</a>
+                        <a href="{{ route('projects') }}">Projects</a>
                     </li>
                     <li>
-                        <a href="./products.html">products</a>
+                        <a href="{{ route('products') }}">products</a>
                     </li>
                     <li>
-                        <a href="./careers.html">careers</a>
+                        <a href="{{ route('careers') }}">careers</a>
                     </li>
                     <li>
-                        <a href="./contact.html">Contacts</a>
+                        <a href="{{ route('contact.us') }}">Contacts</a>
                     </li>
                 </ul>
             </div>
@@ -34,12 +34,19 @@
                 (002) 02 27742593
             </p>
             <!-- paragraph -->
+
+            @php
+                $facebook = \App\Models\Setting::where('type', 'fb_link')->first();
+                $whatsapp = \App\Models\Setting::where('type', 'wts_link')->first();
+                $instagram = \App\Models\Setting::where('type', 'in_link')->first();
+            @endphp
+
             <!-- satrt social -->
             <div class="social_footer d-flex justify-content-center align-items-center">
                 <ul class="social-list d-flex">
-                    <li><a href="" class="fab fa-facebook-f"></a></li>
-                    <li><a href="" class="fab fa-instagram"></a></li>
-                    <li><a href="" class="fab fa-whatsapp"></a></li>
+                    <li><a href="{{ $facebook->value }}" class="fab fa-facebook-f"></a></li>
+                    <li><a href="{{ $instagram->value }}" class="fab fa-instagram"></a></li>
+                    <li><a href="{{ $whatsapp->value }}" class="fab fa-whatsapp"></a></li>
                 </ul>
             </div>
             <!-- satrt social -->
@@ -49,7 +56,7 @@
                 <div class="copyright d-flex align-items-end justify-content-between">
                     <!-- start logo  -->
                     <div class="logo_footer">
-                        <img src="{{asset('assets/images/logo-footer.png')}}" alt="">
+                        <img src="{{ asset('assets/images/logo-footer.png') }}" alt="">
                     </div>
                     <!-- / logo  -->
                     <p>© Copy Right 2022 HETO, All Right Reserved.</p>

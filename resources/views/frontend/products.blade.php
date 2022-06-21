@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" />
-    <title>HETO Dedign</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="{{ asset('assets/images/logo.png') }}" />
+        <title>HETO Dedign</title>
 
-    <!-- start css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
+        <!-- start css -->
+        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
 
-    <!-- start min style  -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
-    <!-- / min style  -->
+        <!-- start min style  -->
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
+        <!-- / min style  -->
 
-    <!-- start style products  -->
-    <link rel="stylesheet" href="{{ asset('assets/css/products/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/products/responsive.css') }}" />
-    <!-- start style products  -->
+        <!-- start style products  -->
+        <link rel="stylesheet" href="{{ asset('assets/css/products/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/products/responsive.css') }}" />
+        <!-- start style products  -->
 
-    <!-- layout-singl-page -->
-    <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
+        <!-- layout-singl-page -->
+        <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
 
-    <!-- End css -->
-</head>
+        <!-- End css -->
+    </head>
 
 <body>
     <!-- start Header -->
@@ -51,39 +51,7 @@
             </ul>
         </div>
         <!-- Navigation Desctop -->
-        <nav class="navbar-desctop visible-md visible-lg">
-            <div class="container_">
-                <a href="#top" class="logo_header">
-                    <img src="{{ asset('assets/svg/logo.svg') }}" alt="" />
-                </a>
-                <div class="list_icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="app_links">
-                    <div class="ovrlay_div"></div>
-                    <ul class="nav navbar-desctop-menu">
-                        <li>
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="./projects.html">Projects</a>
-                        </li>
-                        <li class="active">
-                            <a href="./products.html">products</a>
-                        </li>
-                        <li>
-                            <a href="./careers.html">careers</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('frontend.layouts.nav')
     </header>
     <!-- / Header -->
 

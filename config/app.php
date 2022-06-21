@@ -164,8 +164,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Sanctum\SanctumServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
-
-
+        Yoeunes\Toastr\ToastrServiceProvider::class,
         /*
          * Package Service Providers...
          */

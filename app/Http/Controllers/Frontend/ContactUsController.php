@@ -22,7 +22,8 @@ class ContactUsController extends Controller
         $contact_us = Contact::create($data);
 
         if ($contact_us) {
-            return redirect()->back()->with('success', 'Your message has been sent successfully');
+            toastr()->success('Your message sent successfully!');
+            return redirect()->back();
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }

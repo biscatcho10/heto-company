@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{asset('assets/images/logo.png')}}">
+    <link rel="icon" href="{{ asset('assets/images/logo.png') }}">
     <title>HETO Dedign</title>
 
     <!-- start css -->
-    <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/aos.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/settings.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/settings.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- End css -->
 </head>
 
@@ -24,7 +24,7 @@
     <header id="top" class="header-home">
         <div class="vertical-panel-top">
             <a href="./index.html" class="logo_header">
-                <img src="{{asset('assets/svg/logo.svg')}}" alt="">
+                <img src="{{ asset('assets/svg/logo.svg') }}" alt="">
             </a>
         </div>
         <div class="vertical-panel"></div>
@@ -41,72 +41,7 @@
         </div>
 
         <!-- Navigation Desctop -->
-        <nav class="navbar-desctop visible-md visible-lg">
-            <div class="container_">
-                <a href="./index.html" class="logo_header">
-                    <img src="{{asset('assets/svg/logo.svg')}}" alt="">
-                </a>
-                <div class="list_icon">
-                    <!-- <i class="fas fa-bars"></i> -->
-                    <div class="icon">
-                        <div class="menu-icon menu-icon-5">
-                            <div class="bar bar-1"></div>
-                            <div class="bar bar-2"></div>
-                            <div class="bar bar-3"></div>
-                        </div>
-                    </div>
-                    <div class="phone">
-                        <div class="menu">
-                            <div class="options">
-                                <div class="option active">
-                                    <a href="./index.html">Home</a>
-                                </div>
-                                <div class="option">
-                                    <a href="./about.html">About</a>
-                                </div>
-                                <div class="option">
-                                    <a href="./projects.html">Projects</a>
-                                </div>
-                                <div class="option">
-                                    <a href="./products.html">products</a>
-                                </div>
-                                <div class="option">
-                                    <a href="./careers.html">careers</a>
-                                </div>
-                                <div class="option">
-                                    <a href="./contact.html">Contacts</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="menu-click-area"></div>
-                    </div>
-
-                </div>
-                <div class="app_links">
-                    <div class="ovrlay_div"></div>
-                    <ul class="nav navbar-desctop-menu">
-                        <li class="active">
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="./projects.html">Projects</a>
-                        </li>
-                        <li>
-                            <a href="./products.html">products</a>
-                        </li>
-                        <li>
-                            <a href="./careers.html">careers</a>
-                        </li>
-                        <li>
-                            <a href="./contact.html">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('frontend.layouts.nav')
     </header>
     <!-- / Header -->
 
@@ -131,8 +66,9 @@
 
                             <!-- Main image-->
 
-                            <img src="{{asset('assets/images/carousel-1.jpg')}}" alt="" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+                            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt=""
+                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                class="rev-slidebg">
 
                             <!-- Layer 1 -->
 
@@ -180,8 +116,9 @@
 
                             <!-- Main image -->
 
-                            <img src="{{asset('assets/images/carousel-2.jpg')}}" alt="" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+                            <img src="{{ asset('assets/images/carousel-2.jpg') }}" alt=""
+                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                class="rev-slidebg">
 
                             <!-- Layer 1 -->
 
@@ -227,8 +164,9 @@
 
                             <!-- Main image-->
 
-                            <img src="{{asset('assets/images/carousel-3.jpg')}}" alt="" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+                            <img src="{{ asset('assets/images/carousel-3.jpg') }}" alt=""
+                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                class="rev-slidebg">
 
                             <!-- Layer 1 -->
 
@@ -329,7 +267,7 @@
 
                     <!-- satrt img section  -->
                     <div class="img_About" data-aos="fade-left">
-                        <img src="{{asset('assets/images/about.jpg')}}" alt="">
+                        <img src="{{ asset('assets/images/about.jpg') }}" alt="">
                     </div>
                     <!-- / img section  -->
                 </div>
@@ -367,57 +305,54 @@
             <div class="content">
                 <div class="row justify-content-between" data-aos="fade-up">
                     <!-- satrt card  -->
-                    <div class="appp" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-                        <div class="card d-flex flex-column justify-content-center active">
-                            <div class="border_div_one"></div>
-                            <div class="border_div_two"></div>
-                            <div class="app"></div>
-                            <h5>Residential</h5>
-                            <div class="header_slider owl-carousel">
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-1.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-2.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-1.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-2.jpg')}}" alt="">
-                                </div>
+                    <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
+                        data-aos-duration="600" data-aos-delay="500">
+
+                        <div class="app"></div>
+                        <h5>Residential</h5>
+                        <div class="header_slider owl-carousel">
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
                             </div>
-                            <p>We have a long and proud history givin emphasis to environment social and economic
-                                outcomes to deliver
-                                places that respond.</p>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
+                            </div>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
+                            </div>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
+                            </div>
                         </div>
+                        <p>We have a long and proud history givin emphasis to environment social and economic outcomes
+                            to deliver
+                            places that respond.</p>
                     </div>
                     <!-- / card  -->
                     <!-- satrt card  -->
-                    <div class="appp" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
-                        <div class="card d-flex flex-column justify-content-center">
-                            <div class="border_div_one"></div>
-                            <div class="border_div_two"></div>
-                            <div class="app"></div>
-                            <h5>COmmercial</h5>
-                            <div class="header_slider owl-carousel">
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-2.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-1.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-2.jpg')}}" alt="">
-                                </div>
-                                <div class="slider-item">
-                                    <img src="{{asset('assets/images/project/project-1.jpg')}}" alt="">
-                                </div>
+                    <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
+                        data-aos-duration="600" data-aos-delay="500">
+                        <div class="after"></div>
+                        <div class="before"></div>
+                        <div class="app"></div>
+                        <h5>COmmercial</h5>
+                        <div class="header_slider owl-carousel">
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
                             </div>
-                            <p>We have a long and proud history givin emphasis to environment social and economic
-                                outcomes to deliver
-                                places that respond.</p>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
+                            </div>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
+                            </div>
+                            <div class="slider-item">
+                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
+                            </div>
                         </div>
+                        <p>We have a long and proud history givin emphasis to environment social and economic outcomes
+                            to deliver
+                            places that respond.</p>
                     </div>
                     <!-- / card  -->
                 </div>
@@ -456,39 +391,44 @@
                 <div class="slider-items-products">
                     <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items owl-carousel slider-width-col6">
-
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-1.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-1.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
 
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-2.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-2.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
 
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-3.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-3.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
 
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-4.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-4.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
 
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-5.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-5.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
 
                             <!-- Item -->
-                            <div class="slider-item"><a href="#"><img src="{{asset('assets/images/clients/clients-6.png')}}"
+                            <div class="slider-item"><a href="#"><img
+                                        src="{{ asset('assets/images/clients/clients-6.png') }}"
                                         alt="Image"></a>
                             </div>
                             <!-- End Item -->
@@ -528,28 +468,28 @@
         <div class="content">
             <div class="portfolio_slider owl-carousel">
                 <div class="slider-item">
-                    <img src="{{asset('assets/images/portfolio/portfolio-1.jpg')}}" alt="">
+                    <img src="{{ asset('assets/images/portfolio/portfolio-1.jpg') }}" alt="">
                     <div class="container_" data-aos="fade-up">
                         <h3>Commercial Project</h3>
                         <a href="#">View Project <i class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="slider-item">
-                    <img src="{{asset('assets/images/portfolio/portfolio-2.jpg')}}" alt="">
+                    <img src="{{ asset('assets/images/portfolio/portfolio-2.jpg') }}" alt="">
                     <div class="container_" data-aos="fade-up">
                         <h3>Commercial Project</h3>
                         <a href="#">View Project <i class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="slider-item">
-                    <img src="{{asset('assets/images/portfolio/portfolio-1.jpg')}}" alt="">
+                    <img src="{{ asset('assets/images/portfolio/portfolio-1.jpg') }}" alt="">
                     <div class="container_" data-aos="fade-up">
                         <h3>Commercial Project</h3>
                         <a href="#">View Project <i class="fas fa-angle-right"></i></a>
                     </div>
                 </div>
                 <div class="slider-item">
-                    <img src="{{asset('assets/images/portfolio/portfolio-2.jpg')}}" alt="">
+                    <img src="{{ asset('assets/images/portfolio/portfolio-2.jpg') }}" alt="">
                     <div class="container_" data-aos="fade-up">
                         <h3>Commercial Project</h3>
                         <a href="#">View Project <i class="fas fa-angle-right"></i></a>
@@ -591,10 +531,10 @@
             <div class="content">
                 <div class="row justify-content-between">
                     <!-- satrt card  -->
-                    <a href="{{asset('assets/pdf/book2.pdf')}}" target="_blank" class="card d-flex" data-aos="fade-up"
-                        data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
+                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
+                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
                         <div class="img_card">
-                            <img src="{{asset('assets/images/Products/Products-1.jpg')}}" alt="Products">
+                            <img src="{{ asset('assets/images/Products/Products-1.jpg') }}" alt="Products">
                         </div>
                         <div class="content_card active">
                             <span>Catalog</span>
@@ -605,10 +545,10 @@
                     </a>
                     <!-- / card  -->
                     <!-- satrt card  -->
-                    <a href="{{asset('assets/pdf/book2.pdf')}}" target="_blank" class="card d-flex" data-aos="fade-up"
-                        data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
+                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
+                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
                         <div class="img_card">
-                            <img src="{{asset('assets/images/Products/Products-2.jpg')}}" alt="Products">
+                            <img src="{{ asset('assets/images/Products/Products-2.jpg') }}" alt="Products">
                         </div>
                         <div class="content_card">
                             <span>Catalog</span>
@@ -619,10 +559,10 @@
                     </a>
                     <!-- / card  -->
                     <!-- satrt card  -->
-                    <a href="{{asset('assets/pdf/book2.pdf')}}" target="_blank" class="card d-flex" data-aos="fade-up"
-                        data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
+                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
+                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
                         <div class="img_card">
-                            <img src="{{asset('assets/images/Products/Products-3.jpg')}}" alt="Products">
+                            <img src="{{ asset('assets/images/Products/Products-3.jpg') }}" alt="Products">
                         </div>
                         <div class="content_card">
                             <span>Catalog</span>
@@ -632,10 +572,10 @@
                         </div>
                     </a>
                     <!-- / card  -->
-                    <a href="{{asset('assets/pdf/book2.pdf')}}" target="_blank" class="card d-flex" data-aos="fade-up"
-                        data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
+                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
+                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
                         <div class="img_card">
-                            <img src="{{asset('assets/images/Products/Products-4.jpg')}}" alt="Products">
+                            <img src="{{ asset('assets/images/Products/Products-4.jpg') }}" alt="Products">
                         </div>
                         <div class="content_card active">
                             <span>Catalog</span>
@@ -676,33 +616,33 @@
     </section>
     <!-- / section break -->
 
-    <!-- start footer -->
+    <!-- Start footer -->
     @include('frontend.layouts.footer')
-    <!-- end footer -->
+    <!-- End footer -->
 
     <!-- start javaScript -->
-    <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{asset('assets/js/owl.carousel.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
 
     <!-- aos animation plugin -->
-    <script src="{{asset('assets/js/aos.min.js')}}"></script>
+    <script src="{{ asset('assets/js/aos.min.js') }}"></script>
 
     <!-- SLIDER REVOLUTION -->
-    <script src="{{asset('assets/js/rev-slider/jquery.themepunch.tools.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/jquery.themepunch.revolution.min.js')}}"></script>
+    <script src="{{ asset('assets/js/rev-slider/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/jquery.themepunch.revolution.min.js') }}"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS   -->
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.actions.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.carousel.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.kenburn.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.layeranimation.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.migration.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.navigation.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.parallax.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.slideanims.min.js')}}"></script>
-    <script src="{{asset('assets/js/rev-slider/revolution.extension.video.min.js')}}"></script>
-    <script src="{{asset('assets/js/home.js')}}"></script>
-    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.actions.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.kenburn.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.migration.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ asset('assets/js/rev-slider/revolution.extension.video.min.js') }}"></script>
+    <script src="{{ asset('assets/js/home.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     <!-- End javaScript -->
 
 </body>

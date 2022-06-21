@@ -18,10 +18,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
     <!-- / min style  -->
 
-    <!-- start style contacts  -->
+    <!-- start style Contacts  -->
     <link rel="stylesheet" href="{{ asset('assets/css/contact/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/contact/responsive.css') }}" />
-    <!-- start style contacts  -->
+    <!-- start style Contacts  -->
 
     <!-- layout-singl-page -->
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
@@ -51,39 +51,7 @@
             </ul>
         </div>
         <!-- Navigation Desctop -->
-        <nav class="navbar-desctop visible-md visible-lg">
-            <div class="container_">
-                <a href="#top" class="logo_header">
-                    <img src="{{ asset('assets/svg/logo.svg') }}" alt="" />
-                </a>
-                <div class="list_icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="app_links">
-                    <div class="ovrlay_div"></div>
-                    <ul class="nav navbar-desctop-menu">
-                        <li>
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html">About</a>
-                        </li>
-                        <li>
-                            <a href="./projects.html">Projects</a>
-                        </li>
-                        <li>
-                            <a href="./products.html">products</a>
-                        </li>
-                        <li>
-                            <a href="./careers.html">careers</a>
-                        </li>
-                        <li class="active">
-                            <a href="./contact.html">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @include('frontend.layouts.nav')
     </header>
     <!-- / Header -->
 
@@ -2470,9 +2438,9 @@
                             id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
                             required data-parsley-required-message="The email is required">
 
-                        <input autocomplete="off" placeholder="Subject (optional)" type="text" name="subject"
+                        <input autocomplete="off" placeholder="phone (optional)" type="tel" name="phone"
                             id="" data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
-                            required data-parsley-required-message="The subject is required">
+                            required data-parsley-required-message="The phone is required">
 
                         <textarea placeholder="Here goes your message" name="message" id="" cols="30" rows="10"
                             data-aos="fade-up" data-aos-duration="700" data-aos-delay="50"
