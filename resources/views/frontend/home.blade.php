@@ -34,9 +34,9 @@
                 <div class="line"></div>
             </div>
             <ul class="social-list">
-                <li><a href="" class="fab fa-facebook-f"></a></li>
-                <li><a href="" class="fab fa-instagram"></a></li>
-                <li><a href="" class="fab fa-whatsapp"></a></li>
+                <li><a href="{{ $settings['fb_link'] }}" class="fab fa-facebook-f"></a></li>
+                <li><a href="{{ $settings['in_link'] }}" class="fab fa-instagram"></a></li>
+                <li><a href="{{ $settings['wts_link'] }}" class="fab fa-whatsapp"></a></li>
             </ul>
         </div>
 

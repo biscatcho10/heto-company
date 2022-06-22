@@ -31,28 +31,7 @@
 
 <body>
     <!-- start Header -->
-    <header id="top" class="header-home">
-        <div class="vertical-panel-top">
-            <a href="#top" class="logo_header">
-                <img src="{{ asset('assets/svg/logo.svg') }}" alt="" />
-            </a>
-        </div>
-        <div class="vertical-panel"></div>
-        <div class="vertical-panel-content">
-            <div class="vertical-panel-info">
-                <div class="vertical-panel-title">Architecture buro</div>
-                <div class="line"></div>
-            </div>
-            <ul class="social-list">
-                <li><a href="" class="fab fa-facebook-f"></a></li>
-                <li><a href="" class="fab fa-instagram"></a></li>
-                <li><a href="" class="fab fa-whatsapp"></a></li>
-
-            </ul>
-        </div>
-        <!-- Navigation Desctop -->
-        @include('frontend.layouts.nav')
-    </header>
+    @include('frontend.layouts.header')
     <!-- / Header -->
 
     <div class="layout">
@@ -2382,24 +2361,24 @@
                     <div class="left_sec sty_div" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
                         <h3>HETO, <span>Egypt</span></h3>
                         <p>Heliopolis Engineering and Trading O ce (HETO)</p>
-                        <div class="d-flex">Email: <p> info@hetoegypt.com</p>
+                        <div class="d-flex">Email: <p>{{ $settings['email'] }}</p>
                         </div>
                     </div>
                     <!-- End left  -->
                     <!-- start right  -->
                     <div class="right_sec sty_div" data-aos="fade-in" data-aos-duration="2000" data-aos-delay="800">
                         <p class="p_top">Call directly</p>
-                        <h3>(+002) 02 27742593</h3>
+                        <h3>{{ $settings['phone'] }}</h3>
                         <div class="Offices text_">
                             <h4>HETO Offices</h4>
-                            <p>129 el Nozha St, Triumphe Sq. Heliopolis. Cairo, Egypt.</p>
+                            <p>{{ $settings['address'] }}</p>
                         </div>
                         <div class="Offices text_">
                             <h4>HETO Numbers</h4>
                             <p class="text_bottom">
-                                (002) 02 27743443<br>
-                                Fax: (002) 02 27742984<br>
-                                Cellular: (002) 01226593355</p>
+                                {{ $settings['phone'] }}<br>
+                                Fax: {{ $settings['fax'] }}<br>
+                                Cellular: {{ $settings['cellular'] }}</p>
                         </div>
 
                     </div>

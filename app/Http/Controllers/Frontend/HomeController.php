@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,31 +11,37 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('frontend.home');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.home', compact('settings'));
     }
 
     public function about()
     {
-        return view('frontend.about');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.about', compact('settings'));
     }
 
     public function projects()
     {
-        return view('frontend.projects');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.projects', compact('settings'));
     }
 
     public function products()
     {
-        return view('frontend.products');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.products', compact('settings'));
     }
 
     public function careers()
     {
-        return view('frontend.careers');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.careers', compact('settings'));
     }
 
     public function contacts()
     {
-        return view('frontend.contacts');
+        $settings = Setting::pluck('value', 'type')->toArray();
+        return view('frontend.contacts', compact('settings'));
     }
 }
