@@ -72,3 +72,10 @@ if (!function_exists("get_file")) {
 
     }
 }
+
+
+function get_file_name($id)
+{
+    $file = \App\Models\Upload::find($id);
+    return $file->file_name;
+}

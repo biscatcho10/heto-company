@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Models\ProjectType;
 use App\Models\Setting;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,7 +15,10 @@ class HomeController extends Controller
     public function index()
     {
         $settings = Setting::pluck('value', 'type')->toArray();
-        return view('frontend.home', compact('settings'));
+        $commercial_projects = ProjectType::where('title', 'Commercial')->first();
+        $residential_projects = ProjectType::where('title', 'Residential')->first();
+        $industrial_projects = ProjectType::where('title', 'Industrial')->first();
+        return view('frontend.home', compact('settings', 'commercial_projects', 'residential_projects', 'industrial_projects'));
     }
 
     public function about()

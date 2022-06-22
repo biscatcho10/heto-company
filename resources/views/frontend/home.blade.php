@@ -23,7 +23,7 @@
     <!-- start Header -->
     <header id="top" class="header-home">
         <div class="vertical-panel-top">
-            <a href="./index.html" class="logo_header">
+            <a href="{{ route('home') }}" class="logo_header">
                 <img src="{{ asset('assets/svg/logo.svg') }}" alt="">
             </a>
         </div>
@@ -211,10 +211,12 @@
 
             <div class="container_">
                 <div class="app_btn_header">
-                    <a href="#" class="btn js-target-scroll"><span>Email:</span> info@hetoegypt.com <i
-                            class="icon-next"></i></a>
-                    <a href="#" class="btn js-target-scroll"><span>Phone:</span> <span>(+02) 27 74 25 93
-                        </span><i class="icon-next"></i></a>
+                    <a href="#" class="btn js-target-scroll"><span>Email:</span>
+                        {{ $settings['email'] }}
+                        <i class="icon-next"></i></a>
+                    <a href="#" class="btn js-target-scroll"><span>Phone:</span>
+                        <span>{{ $settings['phone'] }} </span><i class="icon-next"></i>
+                    </a>
                 </div>
             </div>
         </main>
@@ -337,22 +339,13 @@
                         <div class="app"></div>
                         <h5>COmmercial</h5>
                         <div class="header_slider owl-carousel">
+                            @foreach (json_decode($commercial_projects->gallery) as $img)
                             <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
+                                <img src="{{ asset('gallery/'.get_file_name($img)) }}" alt="">
                             </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
-                            </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
-                            </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
-                            </div>
+                            @endforeach
                         </div>
-                        <p>We have a long and proud history givin emphasis to environment social and economic outcomes
-                            to deliver
-                            places that respond.</p>
+                        <p> {{ $commercial_projects->description }} </p>
                     </div>
                     <!-- / card  -->
                 </div>
