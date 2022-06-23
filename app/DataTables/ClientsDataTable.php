@@ -2,12 +2,14 @@
 
 namespace App\DataTables;
 
-use App\Models\Slider;
+use App\Models\Client;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
+use Yajra\DataTables\Html\Editor\Editor;
+use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class SlidersDataTable extends DataTable
+class ClientsDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -17,7 +19,7 @@ class SlidersDataTable extends DataTable
      */
     public function dataTable($query)
     {
-        $page = "sliders";
+        $page = "clients";
         return datatables()
             ->eloquent($query)
             ->addColumn('action', function ($data) use ($page) {
@@ -28,10 +30,10 @@ class SlidersDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Slider $model
+     * @param \App\Models\Client $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Slider $model)
+    public function query(Client $model)
     {
         return $model->newQuery();
     }
@@ -52,7 +54,7 @@ class SlidersDataTable extends DataTable
             ->info()
             ->dom('Blfrtip')
             ->lengthMenu([10, 25, 50 ,100])
-            ->orderBy(4, "asce")
+            ->orderBy(3, "asce")
             ->buttons(
                 Button::make('reset'),
                 Button::make('reload'),
@@ -68,8 +70,7 @@ class SlidersDataTable extends DataTable
     {
         return [
             Column::make('id')->title('ID'),
-            Column::make('title'),
-            Column::make('subtitle'),
+            Column::make('name')->title('Name'),
             Column::make('created_at'),
             Column::computed('action')
                 ->exportable(false)
@@ -85,6 +86,6 @@ class SlidersDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Sliders_' . date('YmdHis');
+        return 'Clients_' . date('YmdHis');
     }
 }

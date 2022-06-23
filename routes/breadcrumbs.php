@@ -28,6 +28,10 @@ Breadcrumbs::for('sliders', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push('sliders', route('sliders.index'));
 });
+Breadcrumbs::for('clients', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('clients', route('clients.index'));
+});
 Breadcrumbs::for('settings', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
     $trail->push('Settings', route('settings.index'));

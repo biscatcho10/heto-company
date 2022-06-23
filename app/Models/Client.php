@@ -12,14 +12,23 @@ class Client extends Model
     protected $fillable = [
         'name',
         'image',
+        'url',
         'seo_title',
         'seo_description',
         'seo_keywords',
     ];
 
+
+    // get created_at attribute
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
+    }
+
+    // get image attribute
     public function getImageAttribute($value)
     {
-        return asset($value);
+        return asset('clients/' . $value);
     }
-    
+
 }

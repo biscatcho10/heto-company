@@ -71,6 +71,12 @@
                             <span>Banners</span>
                         </a>
                     </li>
+                    <li class="{{areActiveRoutes(['clients.*'])}}">
+                        <a href="{{route("clients.index")}}" >
+                            <i class="ti-gallery"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
                     <li class="{{areActiveRoutes(['sliders.*'])}}">
                         <a href="{{route("sliders.index")}}" >
                             <i class="ti-gallery"></i>

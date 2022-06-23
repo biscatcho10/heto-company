@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Client;
 use App\Models\Project;
 use App\Models\ProjectType;
 use App\Models\Setting;
@@ -20,13 +21,16 @@ class HomeController extends Controller
         $residential_projects = ProjectType::where('title', 'Residential')->first();
         $industrial_projects = ProjectType::where('title', 'Industrial')->first();
         $sliders = Slider::all();
+        $clients = Client::all();
         return view('frontend.home',
         compact(
             'settings',
             'commercial_projects',
             'residential_projects',
             'industrial_projects',
-            'sliders'));
+            'sliders',
+            'clients'
+        ));
     }
 
     public function about()

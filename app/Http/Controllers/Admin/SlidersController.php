@@ -102,6 +102,11 @@ class SlidersController extends Controller
 
     public function destroy(Slider $slider)
     {
+        // remove old image
+        if (file_exists(public_path('sliders/' . $slider->image))) {
+            unlink(public_path('sliders/' . $slider->image));
+        }
+
         $slider->delete();
     }
 

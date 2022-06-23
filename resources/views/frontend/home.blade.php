@@ -336,47 +336,14 @@
                 <div class="slider-items-products">
                     <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items owl-carousel slider-width-col6">
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-1.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
-
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-2.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
-
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-3.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
-
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-4.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
-
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-5.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
-
-                            <!-- Item -->
-                            <div class="slider-item"><a href="#"><img
-                                        src="{{ asset('assets/images/clients/clients-6.png') }}"
-                                        alt="Image"></a>
-                            </div>
-                            <!-- End Item -->
+                            @foreach ($clients as $client)
+                                <div class="item">
+                                    <a href="{{ $client->link }}" target="_blank">
+                                        <img src="{{ $client->image }}"
+                                            alt="">
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

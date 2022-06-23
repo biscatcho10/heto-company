@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         Career::factory()->count(5)->create();
         $this->call(SettingSeeder::class);
         $this->call(SliderSeeder::class);
+        $this->call(ClientSeeder::class);
     }
 }

@@ -17,6 +17,7 @@ class CreateClientsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
+            $table->string('url');
             $table->string("seo_title")->nullable();
             $table->longText("seo_description")->nullable();
             $table->longText("seo_keywords")->nullable();
