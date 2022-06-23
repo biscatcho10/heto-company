@@ -19,10 +19,10 @@ class Slider extends Model
 
 
 
-    // public function getImageAttribute($value)
-    // {
-    //     return asset('sliders/' . $value);
-    // }
+    public function getImageAttribute($value)
+    {
+        return asset('sliders/' . $value);
+    }
 
 
     // get created_at attribute

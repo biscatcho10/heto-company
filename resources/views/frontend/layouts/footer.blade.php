@@ -38,9 +38,9 @@
             <!-- satrt social -->
             <div class="social_footer d-flex justify-content-center align-items-center">
                 <ul class="social-list d-flex">
-                    <li><a href="{{ $settings['fb_link'] }}" class="fab fa-facebook-f"></a></li>
-                    <li><a href="{{ $settings['in_link'] }}" class="fab fa-instagram"></a></li>
-                    <li><a href="{{ $settings['wts_link'] }}" class="fab fa-whatsapp"></a></li>
+                    <li><a href="{{ $settings['fb_link'] ?? '#' }}" class="fab fa-facebook-f"></a></li>
+                    <li><a href="{{ $settings['in_link'] ?? '#' }}" class="fab fa-instagram"></a></li>
+                    <li><a href="{{ $settings['wts_link'] ?? '#' }}" class="fab fa-whatsapp"></a></li>
                 </ul>
             </div>
             <!-- satrt social -->

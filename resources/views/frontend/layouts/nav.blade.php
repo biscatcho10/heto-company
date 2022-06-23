@@ -1,7 +1,7 @@
 <nav class="navbar-desctop visible-md visible-lg ">
     <div class="container_">
         <a href="{{ route('home') }}" class="logo_header">
-            <img src="{{ asset('assets/svg/logo.svg') }}" alt="">
+            <img src="{{ $settings['logo'] }}" alt="">
         </a>
         <div class="list_icon">
             <!-- <i class="fas fa-bars"></i> -->

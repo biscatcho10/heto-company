@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ asset('assets/images/logo.png') }}">
+    <link rel="icon" href="{{ $settings['favicon'] }}">
     <title>HETO Dedign</title>
 
     <!-- start css -->
@@ -24,7 +24,7 @@
     <header id="top" class="header-home">
         <div class="vertical-panel-top">
             <a href="{{ route('home') }}" class="logo_header">
-                <img src="{{ asset('assets/svg/logo.svg') }}" alt="">
+                <img src="{{ $settings['logo'] }}" alt="">
             </a>
         </div>
         <div class="vertical-panel"></div>
@@ -34,9 +34,9 @@
                 <div class="line"></div>
             </div>
             <ul class="social-list">
-                <li><a href="{{ $settings['fb_link'] }}" class="fab fa-facebook-f"></a></li>
-                <li><a href="{{ $settings['in_link'] }}" class="fab fa-instagram"></a></li>
-                <li><a href="{{ $settings['wts_link'] }}" class="fab fa-whatsapp"></a></li>
+                <li><a href="{{ $settings['fb_link'] ?? '#' ?? '#' }}" class="fab fa-facebook-f"></a></li>
+                <li><a href="{{ $settings['in_link'] ?? '#' ?? '#' }}" class="fab fa-instagram"></a></li>
+                <li><a href="{{ $settings['wts_link'] ?? '#' ?? '#' }}" class="fab fa-whatsapp"></a></li>
             </ul>
         </div>
 
@@ -60,7 +60,57 @@
             <div class="rev_slider_wrapper">
                 <div id="rev_slider" class="rev_slider fullscreenbanner">
                     <ul>
-                        <!-- Slide 1 -->
+                        @forelse ($sliders as $slider)
+                            <!-- Slide 1 -->
+                            <li data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000"
+                                data-fsmasterspeed="1000">
+
+                                <!-- Main image-->
+
+                                <img src="{{ $slider->image }}" alt=""
+                                    data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                    class="rev-slidebg">
+
+                                <!-- Layer 1 -->
+
+                                <div class="slide-title tp-caption tp-resizeme"
+                                    data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
+                                    data-y="['middle','middle','middle','middle']" data-voffset="['120','70', '120']"
+                                    data-fontsize="['50']" data-lineheight="['80','75', '65']"
+                                    data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
+                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                    data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                                    data-splitin="chars" data-splitout="none" data-responsive_offset="on"
+                                    data-elementdelay="0.05">
+                                    {{ $slider->title }}
+                                </div>
+
+                                <!-- Layer 2 -->
+
+                                <div class="slide-subtitle tp-caption tp-resizeme"
+                                    data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
+                                    data-y="['middle','middle','middle','middle']" data-voffset="['200','165', '280']"
+                                    data-fontsize="['50','20']" data-lineheight="['30']"
+                                    data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
+                                    data-transform_out="opacity:0;s:1000;s:1000;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                                    data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                                    data-elementdelay="0.05">
+                                    {{ $slider->subtitle }}
+                                </div>
+
+                                <!-- Layer 3 -->
+
+                            </li>
+                        @empty
+
                         <li data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000"
                             data-fsmasterspeed="1000">
 
@@ -109,102 +159,8 @@
 
                         </li>
 
-                        <!-- Slide 2 -->
+                        @endforelse
 
-                        <li data-transition="slotzoom-horizontal" data-slotamount="7" data-easein="Power3.easeInOut"
-                            data-easeout="Power3.easeInOut" data-masterspeed="1000">
-
-                            <!-- Main image -->
-
-                            <img src="{{ asset('assets/images/carousel-2.jpg') }}" alt=""
-                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                class="rev-slidebg">
-
-                            <!-- Layer 1 -->
-
-                            <div class="slide-title tp-caption tp-resizeme" data-x="['right','right','right','right']"
-                                data-hoffset="['-18','-18','50','18']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['120','100', '120']" data-fontsize="['50']"
-                                data-lineheight="['80','75', '65']" data-width="['1500','900','800']"
-                                data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                                data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
-                                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">Exhibition center in boston
-                            </div>
-
-
-                            <!-- Layer 2 -->
-                            <div class="slide-subtitle tp-caption tp-resizeme"
-                                data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','165', '280']"
-                                data-fontsize="['50','30']" data-lineheight="['80','75', '65']"
-                                data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
-                                data-transform_idle="o:1;"
-                                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
-                                data-transform_out="opacity:0;s:1000;s:1000;"
-                                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">Concert Hall is the
-                                architecture of a new
-                                generation, a building
-                            </div>
-                            <!-- Layer 3 -->
-
-                        </li>
-
-                        <!-- Slide 3 -->
-
-                        <li data-transition="slotzoom-horizontal" data-slotamount="7" data-easein="Power3.easeInOut"
-                            data-easeout="Power3.easeInOut" data-masterspeed="1000">
-
-                            <!-- Main image-->
-
-                            <img src="{{ asset('assets/images/carousel-3.jpg') }}" alt=""
-                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                class="rev-slidebg">
-
-                            <!-- Layer 1 -->
-
-                            <div class="slide-title tp-caption tp-resizeme" data-x="['right','right','right','right']"
-                                data-hoffset="['-18','-18','50','18']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['120','100', '120']" data-fontsize="['50']"
-                                data-lineheight="['80','75', '65']" data-width="['1500','900','800']"
-                                data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                                data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
-                                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">Modern hotel in london
-                            </div>
-
-
-                            <!-- Layer 2 -->
-                            <div class="slide-subtitle tp-caption tp-resizeme"
-                                data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','165', '280']"
-                                data-fontsize="['50','30']" data-lineheight="['80','75', '65']"
-                                data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
-                                data-transform_idle="o:1;"
-                                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
-                                data-transform_out="opacity:0;s:1000;s:1000;"
-                                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">Concert Hall is the
-                                architecture of a new
-                                generation, a building
-                            </div>
-
-                            <!-- Layer 3 -->
-
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -212,10 +168,10 @@
             <div class="container_">
                 <div class="app_btn_header">
                     <a href="#" class="btn js-target-scroll"><span>Email:</span>
-                        {{ $settings['email'] }}
+                        {{ $settings['email'] ?? '#' }}
                         <i class="icon-next"></i></a>
                     <a href="#" class="btn js-target-scroll"><span>Phone:</span>
-                        <span>{{ $settings['phone'] }} </span><i class="icon-next"></i>
+                        <span>{{ $settings['phone'] ?? '#' }} </span><i class="icon-next"></i>
                     </a>
                 </div>
             </div>
@@ -313,22 +269,16 @@
                         <div class="app"></div>
                         <h5>Residential</h5>
                         <div class="header_slider owl-carousel">
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
-                            </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
-                            </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-2.jpg') }}" alt="">
-                            </div>
-                            <div class="slider-item">
-                                <img src="{{ asset('assets/images/project/project-1.jpg') }}" alt="">
-                            </div>
+                            @if ($residential_projects->gallery != null)
+                                @foreach (json_decode($residential_projects->gallery) as $img)
+                                    <div class="slider-item">
+                                        <img src="{{ asset('gallery/' . get_file_name($img)) }}" alt="">
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
-                        <p>We have a long and proud history givin emphasis to environment social and economic outcomes
-                            to deliver
-                            places that respond.</p>
+                        <p> {{ $residential_projects->description }} </p>
+
                     </div>
                     <!-- / card  -->
                     <!-- satrt card  -->
@@ -339,11 +289,13 @@
                         <div class="app"></div>
                         <h5>COmmercial</h5>
                         <div class="header_slider owl-carousel">
-                            @foreach (json_decode($commercial_projects->gallery) as $img)
-                            <div class="slider-item">
-                                <img src="{{ asset('gallery/'.get_file_name($img)) }}" alt="">
-                            </div>
-                            @endforeach
+                            @if ($commercial_projects->gallery != null)
+                                @foreach (json_decode($commercial_projects->gallery) as $img)
+                                    <div class="slider-item">
+                                        <img src="{{ asset('gallery/' . get_file_name($img)) }}" alt="">
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                         <p> {{ $commercial_projects->description }} </p>
                     </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\ProjectType;
 use App\Models\Setting;
+use App\Models\Slider;
 use App\Models\Upload;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,14 @@ class HomeController extends Controller
         $commercial_projects = ProjectType::where('title', 'Commercial')->first();
         $residential_projects = ProjectType::where('title', 'Residential')->first();
         $industrial_projects = ProjectType::where('title', 'Industrial')->first();
-        return view('frontend.home', compact('settings', 'commercial_projects', 'residential_projects', 'industrial_projects'));
+        $sliders = Slider::all();
+        return view('frontend.home',
+        compact(
+            'settings',
+            'commercial_projects',
+            'residential_projects',
+            'industrial_projects',
+            'sliders'));
     }
 
     public function about()

@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(JobSeeder::class);
         Project::factory()->count(10)->create();
         Career::factory()->count(5)->create();
+        $this->call(SettingSeeder::class);
+        $this->call(SliderSeeder::class);
     }
 }
