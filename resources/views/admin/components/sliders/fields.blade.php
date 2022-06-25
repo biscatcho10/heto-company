@@ -17,10 +17,15 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="form-group">
             {{ form::label('title','Image')}}
             {{ form::file('image',['class'=>'form-control'])}}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <img src="{{$slider->image}}" class="img-fluid" width="300px" height="300px">
         </div>
     </div>
 </div>

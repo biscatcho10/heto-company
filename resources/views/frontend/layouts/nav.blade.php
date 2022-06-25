@@ -1,7 +1,7 @@
 <nav class="navbar-desctop visible-md visible-lg ">
     <div class="container_">
         <a href="{{ route('home') }}" class="logo_header">
-            <img src="{{ $settings['logo'] }}" alt="">
+            <img src="{{ intval($settings['logo']) != 0 ? asset('heto/gallery/' . get_file_name(intval($settings['logo']))) : $settings['logo'] }}" alt="">
         </a>
         <div class="list_icon">
             <!-- <i class="fas fa-bars"></i> -->
@@ -49,7 +49,7 @@
                 <li class="{{ request()->routeIs('*about') ? 'active' : '' }}">
                     <a href="{{ route('about') }}">About</a>
                 </li>
-                <li class="{{ request()->routeIs('*projects') ? 'active' : '' }}">
+                <li class="{{ request()->routeIs('*projects') || request()->routeIs('show.project') ? 'active' : '' }}">
                     <a href="{{ route('projects') }}">Projects</a>
                 </li>
                 <li class="{{ request()->routeIs('*products') ? 'active' : '' }}">

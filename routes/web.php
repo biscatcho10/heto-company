@@ -22,12 +22,16 @@ Auth::routes(['register' => false]);
 Route::get("/", [HomeController::class, 'index'])->name("home");
 Route::get("/about", [HomeController::class, 'about'])->name("about");
 Route::get("/projects", [HomeController::class, 'projects'])->name("projects");
+Route::get("/projects/{project}", [HomeController::class, 'showProject'])->name("show.project");
 Route::get("/products", [HomeController::class, 'products'])->name("products");
 Route::get("/careers", [HomeController::class, 'careers'])->name("careers");
 Route::get("/contact-us", [HomeController::class, 'contacts'])->name("contact.us");
 
 // contact us form
 Route::post("/contact", [ContactUsController::class, 'contact'])->name("contact");
+
+// careers form
+Route::post("/careers", [HomeController::class, 'saveCareers'])->name("save.careers");
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
@@ -48,6 +52,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::post('categories/reorder', 'CategoriesController@reorder')->name("categories-reorder");
     Route::resource('settings', 'SettingsController')->except(['update', 'destroy', 'edit', 'store', 'create']);
     Route::post("settings", 'SettingsController@update')->name("settings.update");
+    Route::get('sections', 'SettingsController@sections')->name("sections");
+    Route::post("sections", 'SettingsController@updateSections')->name("sections.update");
     Route::resource('banners', 'BannersController')->except(['update', 'destroy', 'edit', 'store', 'create']);
     Route::post("banners", 'BannersController@update')->name("banners.update");
     Route::resource('uploads', 'UploadsController');

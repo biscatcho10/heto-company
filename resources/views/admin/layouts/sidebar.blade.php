@@ -1,9 +1,11 @@
 <div class="page-container">
 <div class="sidebar-menu">
     <div class="sidebar-header">
+        @php
+            $settings = \App\Models\Setting::first();
+        @endphp
         <div class="logo">
-{{--            <a href="index.html"><img src="/styles/admin/images/icon/logo.png" alt="logo"></a>--}}
-            <h2 class="text-white">Heto</h2>
+           <a href="{{ route('home') }}"><img src="{{ asset('heto/gallery/logo.png') }}" alt="logo"></a>
         </div>
     </div>
     <div class="main-menu">
@@ -29,7 +31,7 @@
                             </li>
                             <li>
                                 <a href="{{route("project-types.show",1)}}">
-                                    <i class="fa fa-building-o" aria-hidden="true"></i>
+                                    <i class="fa fa-building" aria-hidden="true"></i>
                                     <span>Commercial Projects</span>
                                 </a>
                             </li>
@@ -55,7 +57,7 @@
                     </li>
                     <li class="{{areActiveRoutes(['categories.*'])}}">
                         <a href="{{route("categories.index")}}" >
-                            <i class="fa fa-list-alt"></i>
+                            <i class="fas fa-boxes"></i>
                             <span>Categories</span>
                         </a>
                     </li>
@@ -73,7 +75,7 @@
                     </li>
                     <li class="{{areActiveRoutes(['clients.*'])}}">
                         <a href="{{route("clients.index")}}" >
-                            <i class="ti-gallery"></i>
+                            <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Clients</span>
                         </a>
                     </li>
@@ -81,6 +83,12 @@
                         <a href="{{route("sliders.index")}}" >
                             <i class="ti-gallery"></i>
                             <span>Sliders</span>
+                        </a>
+                    </li>
+                    <li class="{{areActiveRoutes(['sections.*'])}}">
+                        <a href="{{route("sections")}}" >
+                            <i class="fas fa-bars"></i>
+                            <span>Sections</span>
                         </a>
                     </li>
                     <li class="{{areActiveRoutes(['settings.*'])}}">
@@ -97,7 +105,7 @@
                     </li>
                     <li class="{{areActiveRoutes(['about.*'])}}">
                         <a href="{{route("about.index")}}" >
-                            <i class="fa fa-gear"></i>
+                            <i class="fas fa-info-circle"></i>
                             <span>About</span>
                         </a>
                     </li>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ $settings['favicon'] }}">
+    <link rel="icon" href="{{ asset('assets/images/logo.png') }}">
     <title>HETO Dedign</title>
 
     <!-- start css -->
@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- End css -->
+
+    <style>
+        #break .content {
+            background-image: url("{{ asset('heto/sections') }}/{{ $settings['hp_career_image'] }}");
+        }
+    </style>
+
 </head>
 
 <body>
@@ -24,7 +31,7 @@
     <header id="top" class="header-home">
         <div class="vertical-panel-top">
             <a href="{{ route('home') }}" class="logo_header">
-                <img src="{{ $settings['logo'] }}" alt="">
+                <img src="{{ intval($settings['logo']) != 0 ? asset('heto/gallery/' . get_file_name(intval($settings['logo']))) : $settings['logo'] }}" alt="">
             </a>
         </div>
         <div class="vertical-panel"></div>
@@ -34,9 +41,9 @@
                 <div class="line"></div>
             </div>
             <ul class="social-list">
-                <li><a href="{{ $settings['fb_link'] ?? '#' ?? '#' }}" class="fab fa-facebook-f"></a></li>
-                <li><a href="{{ $settings['in_link'] ?? '#' ?? '#' }}" class="fab fa-instagram"></a></li>
-                <li><a href="{{ $settings['wts_link'] ?? '#' ?? '#' }}" class="fab fa-whatsapp"></a></li>
+                <li><a href="{{ $settings['fb_link'] ?? '#' }}" class="fab fa-facebook-f"></a></li>
+                <li><a href="{{ $settings['in_link'] ?? '#' }}" class="fab fa-instagram"></a></li>
+                <li><a href="{{ $settings['wts_link'] ?? '#' }}" class="fab fa-whatsapp"></a></li>
             </ul>
         </div>
 
@@ -208,24 +215,14 @@
                     <!-- satrt text section  -->
                     <div class="text_about left d-flex justify-content-center flex-column flex-wrap"
                         data-aos="fade-right">
-                        <h5>Heliopolis Engineering and Trading company HETO</h5>
-                        <p>Heliopolis Engineering and Trading company HETO is one of Egypt's leading MEP contractors,
-                            importers and
-                            distributors. HETO was founded by Eng Essam Morcos in 1980. The company offers a
-                            comprehensive package of
-                            Electro- mechanical services including complete Electrical, HVAC, Plumbing and Firefighting
-                            supply and
-                            installation as HETO is classified as class 3 in electromechanical in Egyptian Federation
-                            for construction
-                            and Building Contractors. At HETO we have a team of highly experienced engineers and highly
-                            and highly
-                            skilled technicians.</p>
+                        <h5>{{ $settings['hp_about_title'] ?? "" }}</h5>
+                        <p>{!! $settings['hp_about_description'] ?? "" !!}</p>
                     </div>
                     <!-- / text section  -->
 
                     <!-- satrt img section  -->
                     <div class="img_About" data-aos="fade-left">
-                        <img src="{{ asset('assets/images/about.jpg') }}" alt="">
+                        <img src="{{ asset('heto/sections/'. $settings['hp_about_image'] ) }}" alt="">
                     </div>
                     <!-- / img section  -->
                 </div>
@@ -272,7 +269,7 @@
                             @if ($residential_projects->gallery != null)
                                 @foreach (json_decode($residential_projects->gallery) as $img)
                                     <div class="slider-item">
-                                        <img src="{{ asset('gallery/' . get_file_name($img)) }}" alt="">
+                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}" alt="">
                                     </div>
                                 @endforeach
                             @endif
@@ -292,7 +289,7 @@
                             @if ($commercial_projects->gallery != null)
                                 @foreach (json_decode($commercial_projects->gallery) as $img)
                                     <div class="slider-item">
-                                        <img src="{{ asset('gallery/' . get_file_name($img)) }}" alt="">
+                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}" alt="">
                                     </div>
                                 @endforeach
                             @endif
@@ -339,8 +336,7 @@
                             @foreach ($clients as $client)
                                 <div class="item">
                                     <a href="{{ $client->link }}" target="_blank">
-                                        <img src="{{ $client->image }}"
-                                            alt="">
+                                        <img src="{{ $client->image }}"alt="">
                                     </a>
                                 </div>
                             @endforeach
@@ -518,11 +514,10 @@
         </div>
         <div class="content d-flex align-items-center justify-content-center">
             <div class="break_content d-flex align-items-center justify-content-center flex-column">
-                <h2>Providing Personalized and High Quality Services</h2>
-                <p>We can manage your dream building A small river
-                    named Duden flows by their place</p>
-                <button class="btn" data-aos="fade-in" data-aos-duration="500"
-                    data-aos-delay="300">Request</button>
+                <h2>{{ $settings['hp_career_title'] ?? "" }}</h2>
+                <p>{!! $settings['hp_career_description'] ?? "" !!}</p>
+                <a href="{{ route('careers') }}" class="btn" data-aos="fade-in" data-aos-duration="500"
+                data-aos-delay="300">Request</a>
             </div>
         </div>
     </section>

@@ -9,7 +9,7 @@
 
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/styles/admin/images/icon/favicon.ico">
+    <link rel="icon" href="{{ asset('assets/images/logo.png') }}">
     <link rel="stylesheet" href="/styles/admin/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/admin/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/admin/css/themify-icons.css">

@@ -21,7 +21,7 @@ class Slider extends Model
 
     public function getImageAttribute($value)
     {
-        return asset('sliders/' . $value);
+        return asset('heto/sliders/' . $value);
     }
 
 

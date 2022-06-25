@@ -47,7 +47,7 @@ class SlidersController extends Controller
 
         // save image
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('sliders'), $imageName);
+        $request->image->move(public_path('heto/sliders'), $imageName);
 
         Slider::create([
             'title' => $request->title,
@@ -80,12 +80,12 @@ class SlidersController extends Controller
         // save image
         if ($request->hasFile('image')) {
             // remove old image
-            if (file_exists(public_path('sliders/' . $slider->image))) {
-                unlink(public_path('sliders/' . $slider->image));
+            if (file_exists(public_path('heto/sliders/' . $slider->image))) {
+                unlink(public_path('heto/sliders/' . $slider->image));
             }
 
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('sliders'), $imageName);
+            $request->image->move(public_path('heto/sliders'), $imageName);
             $slider->image = $imageName;
         }
 
@@ -103,8 +103,8 @@ class SlidersController extends Controller
     public function destroy(Slider $slider)
     {
         // remove old image
-        if (file_exists(public_path('sliders/' . $slider->image))) {
-            unlink(public_path('sliders/' . $slider->image));
+        if (file_exists(public_path('heto/sliders/' . $slider->image))) {
+            unlink(public_path('heto/sliders/' . $slider->image));
         }
 
         $slider->delete();

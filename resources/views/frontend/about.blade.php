@@ -70,22 +70,8 @@
                         <div class="text_top_sec text_ right_width" data-aos="fade-up" data-aos-duration="700"
                             data-aos-delay="500">
                             <div class="app_text">
-                                <h3 class="uppercase">who we are</h3>
-                                <p>Heliopolis Engineering and Trading company HETO</p>
-                                <p>
-                                    Heliopolis Engineering and Trading company HETO is one of
-                                    Egypt's leading MEP contractors, importers and distributors.
-                                    HETO was founded by Eng Essam Morcos in 1980.
-                                </p>
-                                <p>
-                                    The company offers a comprehensive package of Electro-
-                                    mechanical services including complete Electrical, HVAC,
-                                    Plumbing and Firefighting supply and installation as HETO is
-                                    classified as class 3 in electromechanical in Egyptian
-                                    Federation for construction and Building Contractors. At
-                                    HETO we have a team of highly experienced engineers and
-                                    highly and highly skilled technicians.
-                                </p>
+                                <h3 class="uppercase"> {{ $settings['who_we_are_title'] }} </h3>
+                                {!! $settings['who_we_are_desc'] !!}
                             </div>
                         </div>
                         <!-- End text top  -->
@@ -98,7 +84,9 @@
                             <div class="app_num_experience" data-aos="fade-in" data-aos-duration="1500"
                                 data-aos-delay="400">
                                 <div class="text num_experience">
-                                    42
+                                    <!-- number of years from 1980  -->
+                                    {{ date_diff(date_create("0-01-1980"), date_create(date('Y')))->y }}
+
                                 </div>
                             </div>
                             <h3 data-aos="fade-in" data-aos-duration="2000" data-aos-delay="500">Years<br />Experince
@@ -114,14 +102,11 @@
                         <div class="text_experience_sec text_ right_width" data-aos="fade-up" data-aos-duration="700"
                             data-aos-delay="500">
                             <div class="app_text">
-                                <h3 class="uppercase">what we do</h3>
+                                <h3 class="uppercase">
+                                    {{ $settings['what_we_do_title'] }}
+                                </h3>
                                 <p>
-                                    In addition to the Contracting works, HETO is the supplier
-                                    and importer for leading companies in the air conditioning
-                                    field and for the copper pipes and fittings. HETO is the
-                                    supplier and importer in Egypt for (Johnson Controls HITACHI
-                                    Air Conditioning <br>- TECNAIR Close Control Air Conditioners <br>-
-                                    CHIGO Air Conditioning <br>- Mueller Copper pipes and fittings)
+                                    {!! $settings['what_we_do_desc'] !!}
                                 </p>
                             </div>
                         </div>
@@ -167,18 +152,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <div class="titl_card">Contracting<br />Department</div>
+                                <div class="titl_card">
+                                    {{ $settings['contracting_department_title'] }}
+                                </div>
                             </div>
                             <!-- start text crad  -->
                             <p class="text_card">
-                                The Contracting department at HETO is focusing on the
-                                electromechanical works (HVAC, plumbing, electrical,
-                                firefighting, fire alarm) for different types of projects. At
-                                HETO, we do MEP projects for Residential Projects (apartments,
-                                villas, high rise apartments); Commercial Projects (admin
-                                buildings, hospitals, hotels, shopping centres, schools,
-                                universities) and Industrial Projects (Power Station, Tunnels,
-                                factories, warehouses)
+                                {!! $settings['contracting_department_desc'] !!}
                             </p>
                         </div>
                         <!-- start singl card -->
@@ -216,13 +196,13 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <div class="titl_card">The Services<br>Department</div>
+                                <div class="titl_card">
+                                    {{ $settings['services_department_title'] }}
+                                </div>
                             </div>
                             <!-- start text crad  -->
                             <p class="text_card">
-                                HETO provides services as Planning, Coordination, Engineering,
-                                Supervision, Testing & Commissioning, Operation and
-                                Maintenance for all its MEP works and HVAC plants
+                                {!! $settings['services_department_desc'] !!}
                             </p>
                         </div>
                     </div>
@@ -258,16 +238,9 @@
                             </g>
                         </svg>
                     </div>
-                    <h4>HETO was founded by<br>Essam Morcos in 1980</h4>
+                    <h4>{{ $settings['ceo_sec_title'] }}</h4>
                     <p>
-                        Heliopolis Engineering and Trading company HETO is one of Egypt's
-                        leading MEP contractors, importers and distributors. HETO was
-                        founded by Eng Essam Morcos in 1980.<br><br>The company offers a
-                        comprehensive package of Electro-mechanical services including
-                        complete contracting supply and installation works for HVAC,
-                        Electrical, Plumbing and Firefighting. HETO has a team of highly
-                        experienced engineers and highly skilled technicians eager to
-                        fulfil all MEP projects needs.
+                        {!! $settings['ceo_sec_description'] !!}
                     </p>
                 </div>
                 <!-- End text section  -->
@@ -275,13 +248,13 @@
                 <div class="right_section" data-aos="fade-left" data-aos-duration="500" data-aos-offset="70"
                     data-aos-delay="300">
                     <div class="text_founded">
-                        <img src="{{ asset('assets/images/page_about/founded.jpg') }}" alt="">
+                        <img src="{{ asset('heto/sections/'. $settings['ceo_image'] ) }}" alt="">
                         <div class="name_founded">
-                            Essam Morcos<br>
+                            {{ $settings['ceo_name'] }}<br>
                             <div>CEO/Owner/Founder</div>
                         </div>
                         <div class="Signature_founded">
-                            Essam Morcos
+                            {{ $settings['ceo_signature'] }}
                         </div>
                     </div>
                 </div>

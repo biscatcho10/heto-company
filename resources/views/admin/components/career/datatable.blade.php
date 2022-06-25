@@ -6,20 +6,20 @@
                 <div class="col-sm-5">
                     <h1>Careers</h1>
                 </div>
-                <div class="col-sm-2 align-content-center">
+                <div class="col-sm-3 align-content-center">
                     <h5 class=" justify-content-center text-right" style="margin:auto;line-height:45px;vertical-align:middle;">Jobs filter</h5>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         {!! form::open(['route'=>['careers.index'],'id'=>'form-filter', 'method'=>"get"] ) !!}
                             {{ form::select('job_id', $result, app('request')->input('job_id'),['id'=>'select-filter','class'=>'select2 form-control templatingSelect2', "style"=>"height: 100px, width:60%"]) }}
                         {!!form::close()!!}
                     </div>
                 </div>
-                <div class="col-sm-2">
+                {{-- <div class="col-sm-2">
                     <a href="{{ route('careers.create') }}" type="button" class="btn btn-block btn-primary btn-md">Create
                         Career</a>
-                </div>
+                </div> --}}
             </div>
         </div><!-- /.container-fluid -->
     </section>

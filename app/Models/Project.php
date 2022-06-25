@@ -8,7 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','description','case_study','location','gallery','thumbnail_image','category_id','project_type_id','seo_title','seo_description','seo_keywords'];
+    protected $fillable = [
+        'title',
+        'description',
+        'title2',
+        'description2',
+        'name',
+        'date',
+        'case_study',
+        'location',
+        'gallery',
+        'thumbnail_image',
+        'category_id',
+        'project_type_id',
+        'seo_title',
+        'seo_description',
+        'seo_keywords'
+    ];
     public static $cast = [
         'title' => 'required',
         'description' => 'required',
@@ -18,4 +34,11 @@ class Project extends Model
         'category_id' => 'required',
         'project_type_id' => 'required',
     ];
+
+
+    // get date attribute
+    public function getDateAttribute($value)
+    {
+        return date('Y-m-d', strtotime($value));
+    }
 }

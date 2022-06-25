@@ -1,8 +1,26 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="form-group">
-            {{ form::label('title','Title')}}
+            {{ form::label('title','Title 1')}}
             {{form::text('title',$project->title,['class'=>'form-control','placeholder'=>'Title'])}}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ form::label('title','Title 2')}}
+            {{form::text('title2',$project->title2,['class'=>'form-control','placeholder'=>'Title'])}}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            {{ form::label('title','Project Name')}}
+            {{form::text('name',$project->name,['class'=>'form-control','placeholder'=>'Project Name'])}}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            {{ form::label('title','Project Date')}}
+            {{form::date('date',$project->date,['class'=>'form-control'])}}
         </div>
     </div>
     <div class="col-sm-4">
@@ -75,8 +93,14 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="form-group">
-            {{ form::label('description','Description')}}
+            {{ form::label('description','Description 1')}}
             {{form::textarea('description',$project->description,['class'=>'form-control','placeholder'=>'Description','rows'=>'2'])}}
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            {{ form::label('description','Description 2')}}
+            {{form::textarea('description2',$project->description2,['class'=>'form-control','placeholder'=>'Description','rows'=>'2'])}}
         </div>
     </div>
 </div>
@@ -106,5 +130,4 @@
             ]
         });
     });
-
 </script>

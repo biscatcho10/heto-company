@@ -47,7 +47,7 @@ class ClientController extends Controller
 
         // save image
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('clients'), $imageName);
+        $request->image->move(public_path('heto/clients'), $imageName);
 
         Client::create([
             'name' => $request->name,
@@ -79,12 +79,12 @@ class ClientController extends Controller
         // save image
         if ($request->hasFile('image')) {
             // remove old image
-            if (file_exists(public_path('clients/' . $client->image))) {
-                unlink(public_path('clients/' . $client->image));
+            if (file_exists(public_path('heto/clients/' . $client->image))) {
+                unlink(public_path('heto/clients/' . $client->image));
             }
 
             $imageName = time().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('clients'), $imageName);
+            $request->image->move(public_path('heto/clients'), $imageName);
             $client->image = $imageName;
         }
 
@@ -101,8 +101,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         // remove old image
-        if (file_exists(public_path('clients/' . $client->image))) {
-            unlink(public_path('clients/' . $client->image));
+        if (file_exists(public_path('heto/clients/' . $client->image))) {
+            unlink(public_path('heto/clients/' . $client->image));
         }
 
         $client->delete();

@@ -1,12 +1,13 @@
 <?php
 
+use App\Models\Upload;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 
 if (!function_exists("gallery")) {
     function gallery($filename)
     {
-        return asset("gallery/{$filename}");
+        return asset("heto/gallery/{$filename}");
     }
 }
 if (!function_exists('areActiveRoutes')) {
@@ -76,6 +77,6 @@ if (!function_exists("get_file")) {
 
 function get_file_name($id)
 {
-    $file = \App\Models\Upload::find($id);
+    $file = Upload::find(intval($id));
     return $file->file_name;
 }

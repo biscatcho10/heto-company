@@ -19,14 +19,17 @@ class ProjectTypesSeeder extends Seeder
             [
                 'title' => 'Commercial',
                 'description' => $faker->address(),
+                'gallery' => "[1,2]",
             ],
             [
                 'title' => 'Residential',
                 'description' => $faker->address(),
+                'gallery' => "[2,1]",
             ],
             [
                 'title' => 'Industrial',
                 'description' => $faker->address(),
+                'gallery' => "[3,1]",
             ],
         ]);
     }

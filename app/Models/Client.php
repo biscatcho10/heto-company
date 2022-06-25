@@ -28,7 +28,7 @@ class Client extends Model
     // get image attribute
     public function getImageAttribute($value)
     {
-        return asset('clients/' . $value);
+        return asset('heto/clients/' . $value);
     }
 
 }

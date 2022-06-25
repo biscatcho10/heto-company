@@ -14,13 +14,15 @@ class UploadsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('uploads')->insert([
-            'user_id' => 1,
-            'file_original_name' => 'test',
-            'file_name' => 'test',
-            'file_size' => 2,
-            "extension" => "png",
-            "type" => "JPG",
-        ]);
+        foreach (range(1, 5) as $index) {
+            DB::table('uploads')->insert([
+                'user_id' => 1,
+                'file_original_name' => $index,
+                'file_name' => $index . '.jpg',
+                'file_size' => 0,
+                "extension" => "jpg",
+                "type" => "image/jpeg",
+            ]);
+        }
     }
 }

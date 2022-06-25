@@ -36,8 +36,8 @@
 
     <div class="layout">
         <main class="main">
-            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
-                data-bgrepeat="no-repeat" class="rev-slidebg" />
+            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center"
+                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" />
         </main>
     </div>
 
@@ -70,132 +70,23 @@
                             <li class="filter" data-filter=".category-2">Residnination</li>
                         </ul>
                         <div id="myFilter" class="myFilter">
-                            <div class="singl_card mix category-1" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-1.jpg') }}" alt="">
-                                    </a>
+
+                            @forelse ($projects as $project)
+                                <div class="singl_card mix {{ $project->project_type_id == 1 ? 'category-1' : 'category-2' }} " data-myorder="1">
+                                    <div class="img_card">
+                                        <a href="{{ route('show.project', $project) }}">
+                                            <img src="{{ asset('heto/gallery/' . get_file_name($project->thumbnail_image)) }}" alt="">
+                                        </a>
+                                    </div>
+                                    <p>{{ $project->date }}</p>
+                                    <h3>
+                                        {{ $project->name }}
+                                    </h3>
+                                    <a href="{{ route('show.project', $project) }}"> full INFO ></a>
                                 </div>
-                                <p>20 Hours Ago .</p>
-                                <h3>
-                                    Discover The Amazing Inside Deco ACarte Museum In Slovakia
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-2" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-2.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Aug 30,2017 .</p>
-                                <h3>
-                                    Top 10 ArchitectureBuildings Unique In Shanghai, China
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-2" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-3.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Aug 25,2017 .</p>
-                                <h3>
-                                    Morroco Shopping Center by KONS
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-1" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-4.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jul 18,2017 .</p>
-                                <h3>
-                                    Italy Winner AMMA Award 2017
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-2" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-5.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jul 5,2017 .</p>
-                                <h3>
-                                    Discover Wood’s Struture From NAH Park, Germany
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-2" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-6.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jun 23,2017 .</p>
-                                <h3>
-                                    New Construction Technology
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-1" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-7.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jun 20,2017 .</p>
-                                <h3>
-                                    New Policy For Protect Workers InContrusction Industrial
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-2" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-8.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jun 7,2017 .</p>
-                                <h3>
-                                    The Amazing Of Roof With Wood’sStructure By Ron Architect
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
-                            <div class="singl_card mix category-1" data-myorder="1">
-                                <div class="img_card">
-                                    <a href="./mini-services.html">
-                                        <img src="{{ asset('assets/images/page-services/img-9.jpg') }}" alt="">
-                                    </a>
-                                </div>
-                                <p>Jun 2,2017 .</p>
-                                <h3>
-                                    Launch Project UK Railway Roar
-                                </h3>
-                                <a href="./mini-services.html">
-                                    full INFO >
-                                </a>
-                            </div>
+                            @empty
+                            @endforelse
+
                         </div>
                         <div class="Pagination">
                             <i class="fas fa-angle-left"></i>
@@ -206,6 +97,9 @@
                                 <li>4</li>
                             </ul>
                             <i class="fas fa-angle-right"></i>
+
+                            {{-- {{ $projects->links() }} --}}
+
                         </div>
                     </div>
                 </div>

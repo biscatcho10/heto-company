@@ -49,17 +49,7 @@
             <!-- satrt content  -->
             <div class="content">
                 <p class="" data-aos="fade-in" data-aos-duration="1800" data-aos-delay="400">
-                    Drafts opens to a new page with the keyboard ready so you can type immediately. Go hands-free with
-                    Dictation. Drafts lets you get things down before you forget without fiddling folders, naming, etc.
-                    <br /><br />
-                    Drafts is a launching-off point for text – use the actions to copy it, share it, or deep link into
-                    other apps and services. Compose a tweet or message, create a file in Dropbox, send a task off to
-                    Reminders – there are hooks into tons of your favorite apps, New entries go into the Inbox. Once
-                    there, you can Tag them for organization, Flag them for importance, or Archive them for long-term
-                    storage.
-                    <br /><br />
-                    Set up a text editing experience that’s perfect for you, with tons of interface adjustments like
-                    custom fonts and control over spacing, line height, and margins.
+                    {!! $settings['cr_desc'] !!}
                 </p>
             </div>
             <!-- / content  -->
@@ -73,32 +63,34 @@
             <!-- satrt content  -->
             <div class="content" data-aos="fade-up">
                 <div class="row">
-                    <form action="" enctype="multipart/form-data">
+                    <form action="{{ route('save.careers') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
-                            <input autocomplete="off" type="text" name="username" id="username">
-                            <label for="username">name</label>
+                            <input autocomplete="off" type="text" name="full_name" id="full_name">
+                            <label for="full_name">Full name</label>
                         </div>
                         <div class="form-group">
-                            <select class="wide" name="vacancy" id="slelct_vacancy">
+                            <select class="wide" name="job_id" id="slelct_vacancy">
                                 <option>Vacancy</option>
-                                <option value="one">one</option>
-                                <option value="two">two</option>
-                                <option value="three">three</option>
+                                @foreach ($jobs as $id => $job)
+                                <option value="{{ $id }}">{{ $job }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <input autocomplete="off" type="text" name="PhoneNumber" id="PhoneNumber">
-                            <label for="PhoneNumber">Phone number</label>
+                            <input autocomplete="off" type="text" name="phone" id="phone">
+                            <label for="phone">Phone number</label>
                         </div>
                         <div class="form-group">
                             <input autocomplete="off" type="email" name="email" id="email">
                             <label for="email">Your Email</label>
                         </div>
-                        <label for="file_upload" class="btn_upload">Upload your resume<div class="">browse
-                            </div></label>
-                        <input id="file_upload" autocomplete="off" placeholder="" type="file" name="uploadFile"
-                            id="">
-                        <input type="submit" class="btn_form" value="SUBMIT">
+                        <label for="file_upload" class="btn_upload">
+                            Upload your resume <div class="">browse</div>
+                        </label>
+                        <input id="file_upload" autocomplete="off" placeholder="" type="file" name="upload_id">
+
+                        <button type="submit" class="btn_form" >SUBMIT</button>
                     </form>
                 </div>
             </div>

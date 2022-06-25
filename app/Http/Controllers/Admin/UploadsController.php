@@ -49,10 +49,10 @@ class UploadsController extends Controller
             'type' => $image->getClientMimeType(),
         ];
         if (str_contains($image->getMimeType(), 'image')) {
-            $image->move(public_path('gallery'), $newFileName);
+            $image->move(public_path('heto/gallery'), $newFileName);
         }
         else {
-            $image->move(public_path('files'), $newFileName);
+            $image->move(public_path('heto/files'), $newFileName);
         }
         return Upload::create($photo);
     }
