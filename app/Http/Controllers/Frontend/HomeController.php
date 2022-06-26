@@ -12,6 +12,7 @@ use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -70,33 +71,23 @@ class HomeController extends Controller
 
     public function saveCareers(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'phone' => 'required',
-        //     'job_id' => 'required',
-        //     'message' => 'required',
-        // ]);
-
         $input = $request->except('_token', '_method', 'upload_id');
-
-        // dd($input);
 
         if ($request->hasFile('upload_id')) {
             $file = $request->file('upload_id');
-            $fileName = $file->getClientOriginalName();
-            $file->move(public_path('uploads'), $fileName);
+            $name = time() . '-' . $file->getClientOriginalName();
+            $file->move(public_path() . '/heto/gallery/', $name);
             $upload = Upload::create([
                 "user_id" => 1,
-                "file_original_name" => $file,
-                "file_name" => $fileName,
-                "file_size" => '1',
+                "file_original_name" => $file->getClientOriginalName(),
+                "file_name" => $name,
+                "file_size" => 1,
                 "extension" => $file->getClientOriginalExtension(),
-                "type" => 'pdf',
+                "type" => "pdf/application",
             ]);
+            $input['upload_id'] = $upload->id;
         }
 
-        $input['upload_id'] = $upload->id;
         Career::create($input);
         toastr()->success('Your data saved successfully!');
 

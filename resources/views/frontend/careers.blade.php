@@ -37,8 +37,8 @@
 
     <div class="layout">
         <main class="main">
-            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
-                data-bgrepeat="no-repeat" class="rev-slidebg" />
+            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center"
+                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" />
         </main>
     </div>
 
@@ -63,34 +63,36 @@
             <!-- satrt content  -->
             <div class="content" data-aos="fade-up">
                 <div class="row">
-                    <form action="{{ route('save.careers') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('save.careers') }}" method="POST" enctype="multipart/form-data"
+                        id="career-form">
                         @csrf
                         <div class="form-group">
-                            <input autocomplete="off" type="text" name="full_name" id="full_name">
+                            <input autocomplete="off" type="text" name="full_name" id="full_name" required>
                             <label for="full_name">Full name</label>
                         </div>
                         <div class="form-group">
-                            <select class="wide" name="job_id" id="slelct_vacancy">
+                            <select class="wide" name="job_id" id="slelct_vacancy" required>
                                 <option>Vacancy</option>
                                 @foreach ($jobs as $id => $job)
-                                <option value="{{ $id }}">{{ $job }}</option>
+                                    <option value="{{ $id }}">{{ $job }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <input autocomplete="off" type="text" name="phone" id="phone">
+                            <input autocomplete="off" type="text" name="phone" id="phone" required>
                             <label for="phone">Phone number</label>
                         </div>
                         <div class="form-group">
-                            <input autocomplete="off" type="email" name="email" id="email">
+                            <input autocomplete="off" type="email" name="email" id="email" required>
                             <label for="email">Your Email</label>
                         </div>
                         <label for="file_upload" class="btn_upload">
                             Upload your resume <div class="">browse</div>
                         </label>
-                        <input id="file_upload" autocomplete="off" placeholder="" type="file" name="upload_id">
+                        <input id="file_upload" autocomplete="off" placeholder="" type="file" name="upload_id" required >
 
-                        <button type="submit" class="btn_form" >SUBMIT</button>
+
+                        <button type="submit" class="btn_form">SUBMIT</button>
                     </form>
                 </div>
             </div>
@@ -111,6 +113,11 @@
     <script>
         $(document).ready(function() {
             $('select').niceSelect();
+
+            // parsely validation
+            $(document).ready(function() {
+                $('#career-form').parsley();
+            });
         });
     </script>
 </body>

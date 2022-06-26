@@ -10,7 +10,7 @@
                 <span>Email: {{$attr['data']->email}}</span><br>
                 <span>Phone: {{$attr['data']->phone}}</span><br>
                 <span>Job: {{$attr['data']->Job}}</span><br>
-                <embed src="{!! get_file($attr['data']->upload_id) !!}" width="90%" height="600px" />
+                <embed src="{{ asset('heto/gallery/' . get_file_name($attr['data']->upload_id)) }}" width="90%" height="600px" />
 
             </div>
             <div class="modal-footer">
