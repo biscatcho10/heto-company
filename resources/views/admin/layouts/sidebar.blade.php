@@ -79,6 +79,12 @@
                             <span>Clients</span>
                         </a>
                     </li>
+                    <li class="{{areActiveRoutes(['products.*'])}}">
+                        <a href="{{route("products.index")}}" >
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
                     <li class="{{areActiveRoutes(['sliders.*'])}}">
                         <a href="{{route("sliders.index")}}" >
                             <i class="ti-gallery"></i>

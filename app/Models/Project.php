@@ -36,6 +36,12 @@ class Project extends Model
     ];
 
 
+    public function project_type()
+    {
+        return $this->belongsTo(ProjectType::class);
+    }
+
+
     // get date attribute
     public function getDateAttribute($value)
     {

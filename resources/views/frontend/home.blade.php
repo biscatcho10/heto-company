@@ -375,34 +375,15 @@
         <!-- satrt content  -->
         <div class="content">
             <div class="portfolio_slider owl-carousel">
-                <div class="slider-item">
-                    <img src="{{ asset('assets/images/portfolio/portfolio-1.jpg') }}" alt="">
-                    <div class="container_" data-aos="fade-up">
-                        <h3>Commercial Project</h3>
-                        <a href="#">View Project <i class="fas fa-angle-right"></i></a>
+                @foreach ($projects as $project)
+                    <div class="slider-item">
+                        <img src="{{ asset('heto/gallery/' . get_file_name($project->thumbnail_image)) }}" alt="">
+                        <div class="container_" data-aos="fade-up">
+                            <h3>{{ $project->type }}</h3>
+                            <a href="{{ route('show.project', $project->id) }}">View Project <i class="fas fa-angle-right"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="slider-item">
-                    <img src="{{ asset('assets/images/portfolio/portfolio-2.jpg') }}" alt="">
-                    <div class="container_" data-aos="fade-up">
-                        <h3>Commercial Project</h3>
-                        <a href="#">View Project <i class="fas fa-angle-right"></i></a>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="{{ asset('assets/images/portfolio/portfolio-1.jpg') }}" alt="">
-                    <div class="container_" data-aos="fade-up">
-                        <h3>Commercial Project</h3>
-                        <a href="#">View Project <i class="fas fa-angle-right"></i></a>
-                    </div>
-                </div>
-                <div class="slider-item">
-                    <img src="{{ asset('assets/images/portfolio/portfolio-2.jpg') }}" alt="">
-                    <div class="container_" data-aos="fade-up">
-                        <h3>Commercial Project</h3>
-                        <a href="#">View Project <i class="fas fa-angle-right"></i></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- / content  -->

@@ -25,6 +25,11 @@ class HomeController extends Controller
         $industrial_projects = ProjectType::where('title', 'Industrial')->first();
         $sliders = Slider::all();
         $clients = Client::all();
+        $projects = Project::all();
+        $projects = $projects->map(function ($project) {
+            $project->type = $project->project_type->title;
+            return $project;
+        });
         return view('frontend.home',
         compact(
             'settings',
@@ -32,7 +37,8 @@ class HomeController extends Controller
             'residential_projects',
             'industrial_projects',
             'sliders',
-            'clients'
+            'clients',
+            'projects'
         ));
     }
 

@@ -39,6 +39,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::get('/map-url', 'DashboardController@mapData')->name("mapData");
     Route::get('/browser-usage', 'DashboardController@browserUsage')->name("browserUsage");
     Route::resource('careers', 'CareersController')->except('show');
+    Route::resource('products', 'ProductsController')->except('show');
+    Route::post('product/reorder', 'ProductController@reorder')->name("products-reorder");
     Route::resource('sliders', 'SlidersController')->except('show');
     Route::post('sliders/reorder', 'SlidersController@reorder')->name("sliders-reorder");
     Route::resource('clients', 'ClientController')->except('show');

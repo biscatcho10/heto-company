@@ -18,4 +18,10 @@ class Career extends Model
     public static $cast = [
         'email' => 'required',
     ];
+
+    // get created_at
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
+    }
 }
