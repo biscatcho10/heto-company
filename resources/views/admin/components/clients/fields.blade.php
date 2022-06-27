@@ -8,12 +8,19 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="form-group">
             {{ form::label('title','Image')}}
             {{ form::file('image',['class'=>'form-control'])}}
         </div>
     </div>
+    @if ($client->image != "http://heto.test/heto/clients")
+        <div class="col-sm-6">
+            <div class="form-group">
+                <img src="{{$client->image}}" class="img-fluid" width="150px" height="150px">
+            </div>
+        </div>
+    @endif
 </div>
 
 <div class="row">

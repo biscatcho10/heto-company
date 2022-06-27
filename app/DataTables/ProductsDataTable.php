@@ -69,6 +69,7 @@ class ProductsDataTable extends DataTable
         return [
             Column::make('id')->title('ID'),
             Column::make('name'),
+            Column::make('model'),
             Column::make('desc'),
             Column::make('created_at'),
             Column::computed('action')

@@ -45,20 +45,17 @@ class ClientController extends Controller
             'image' => 'required|image',
         ]);
 
-        // save image
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('heto/clients'), $imageName);
+        $inputs = $request->except('_token', 'image');
 
-        Client::create([
-            'name' => $request->name,
-            'seo_title' => $request->seo_title,
-            'seo_description' => $request->seo_description,
-            'seo_keywords' => $request->seo_keywords,
-            'image' => $imageName,
-        ]);
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('heto/clients'), $imageName);
+            $inputs['image'] = $imageName;
+        }
+
+        Client::create($inputs);
 
         return redirect()->route('clients.index')->with(['success' => 'client ' . __("messages.add")]);
-
     }
 
 
@@ -83,7 +80,7 @@ class ClientController extends Controller
                 unlink(public_path('heto/clients/' . $client->image));
             }
 
-            $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            $imageName = time() . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('heto/clients'), $imageName);
             $client->image = $imageName;
         }

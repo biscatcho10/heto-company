@@ -29,9 +29,9 @@
             <!-- / link  -->
             <!-- paragraph -->
             <p class="paragraph">
-                129 el Nozha St, Triumphe Sq. Heliopolis. Cairo, Egypt.<br>
-                info@hetoegypt.com<br>
-                (002) 02 27742593
+                {{ $settings['address'] ?? '#' }}<br>
+                {{ $settings['email'] ?? '#' }}<br>
+                {{ $settings['phone'] ?? '#' }}
             </p>
             <!-- paragraph -->
 

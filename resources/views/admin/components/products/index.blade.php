@@ -18,6 +18,7 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
+                        <th scope="col">Model</th>
                         <th scope="col">Description</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -27,6 +28,7 @@
                         <tr>
                             <th scope="row">{{$product->id}}</th>
                             <td>{{$product->name}}</td>
+                            <td>{{$product->model}}</td>
                             <td>{{$product->desc}}</td>
                             <td>
                                 <ul class="d-flex justify-content-center">

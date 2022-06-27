@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Career;
 use App\Models\Client;
 use App\Models\Job;
+use App\Models\Product;
 use App\Models\Project;
 use App\Models\ProjectType;
 use App\Models\Setting;
@@ -25,6 +27,7 @@ class HomeController extends Controller
         $industrial_projects = ProjectType::where('title', 'Industrial')->first();
         $sliders = Slider::all();
         $clients = Client::all();
+        $products = Product::all()->take(4);
         $projects = Project::all();
         $projects = $projects->map(function ($project) {
             $project->type = $project->project_type->title;
@@ -38,40 +41,52 @@ class HomeController extends Controller
             'industrial_projects',
             'sliders',
             'clients',
-            'projects'
+            'projects',
+            'products'
         ));
     }
 
     public function about()
     {
+        $upload = Banner::where('page_key', 'about')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
         $settings = Setting::pluck('value', 'type')->toArray();
-        return view('frontend.about', compact('settings'));
+        return view('frontend.about', compact('settings', 'banner'));
     }
 
     public function projects()
     {
+        $upload = Banner::where('page_key', 'projects')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
         $settings = Setting::pluck('value', 'type')->toArray();
         $projects = Project::whereIn('project_type_id', [1, 2])->paginate(6);
-        return view('frontend.projects', compact('settings', 'projects'));
+        return view('frontend.projects', compact('settings', 'projects', 'banner'));
     }
 
     public function products()
     {
+        $upload = Banner::where('page_key', 'products')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
+        $products = Product::paginate(4);
         $settings = Setting::pluck('value', 'type')->toArray();
-        return view('frontend.products', compact('settings'));
+        return view('frontend.products', compact('settings', 'products', 'banner'));
     }
 
     public function careers()
     {
+        $upload = Banner::where('page_key', 'careers')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
         $settings = Setting::pluck('value', 'type')->toArray();
         $jobs = Job::pluck('title', 'id')->toArray();
-        return view('frontend.careers', compact('settings', 'jobs'));
+        return view('frontend.careers', compact('settings', 'jobs', 'banner'));
     }
 
     public function contacts()
     {
+        $upload = Banner::where('page_key', 'contact')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
         $settings = Setting::pluck('value', 'type')->toArray();
-        return view('frontend.contacts', compact('settings'));
+        return view('frontend.contacts', compact('settings', 'banner'));
     }
 
 
@@ -103,11 +118,13 @@ class HomeController extends Controller
 
     public function showProject(Project $project)
     {
+        $upload = Banner::where('page_key', 'single')->first()->upload_id;
+        $banner = $upload ? $banner = asset('heto/gallery/'. get_file_name($upload)) : null;
         $gallery = json_decode($project->gallery);
         $settings = Setting::pluck('value', 'type')->toArray();
         $next_project = Project::where('id', '>', $project->id)->where('project_type_id', $project->project_type_id)->first();
         $prev_project = Project::where('id', '<', $project->id)->where('project_type_id', $project->project_type_id)->first();
         $different_projects = Project::where('project_type_id', '!=', $project->project_type_id)->get();
-        return view('frontend.project', compact('settings', 'project', 'next_project', 'prev_project', 'gallery', 'different_projects'));
+        return view('frontend.project', compact('settings', 'project', 'next_project', 'prev_project', 'gallery', 'different_projects', 'banner'));
     }
 }

@@ -10,14 +10,20 @@ use Illuminate\Http\Request;
 class BannersController extends Controller
 {
     public static $banners = [
+        // 'about' => 'About',
+        // 'vission' => "Vission",
+        // 'mission' => 'Mission',
+        // 'career' => "Career",
+        // 'commercial' => "Commercial",
+        // 'residential' => "Residential",
+        // 'industry' => "Industry",
+        // 'contact' => "Contact",
         'about' => 'About',
-        'vission' => "Vission",
-        'mission' => 'Mission',
-        'career' => "Career",
-        'commercial' => "Commercial",
-        'residential' => "Residential",
-        'industry' => "Industry",
+        'projects' => "Projects",
+        'products' => 'Products',
+        'careers' => "Career",
         'contact' => "Contact",
+        'single' => "Single",
     ];
     /**
      * Display a listing of the resource.

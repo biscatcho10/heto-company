@@ -25,8 +25,11 @@
 
     <!-- layout-singl-page -->
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
-
     <!-- End css -->
+
+    <!-- seo data  -->
+    {!! $settings['google_analysis'] !!}
+    {!! $settings['facebook_pixel'] !!}
 </head>
 
 <body>
@@ -36,7 +39,7 @@
 
     <div class="layout">
         <main class="main">
-            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
+            <img src="{{ $banner ?? asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
                 data-bgrepeat="no-repeat" class="rev-slidebg" />
         </main>
     </div>

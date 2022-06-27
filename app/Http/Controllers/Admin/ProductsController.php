@@ -64,8 +64,12 @@ class ProductsController extends Controller
         Product::create([
             'name' => $request->name,
             'desc' => $request->desc,
+            'model' => $request->model,
             'image' => $imageName,
             'file' => $fileName,
+            'seo_title' => $request->seo_title,
+            'seo_description' => $request->seo_description,
+            'seo_keywords' => $request->seo_keywords,
         ]);
 
         return redirect()->route('products.index')->with(['success' => 'Product ' . __("messages.add")]);
@@ -89,6 +93,8 @@ class ProductsController extends Controller
             'file' => 'nullable|file|mimes:pdf',
         ]);
 
+        $inputs = $request->except('_token', '_method', 'image', 'file');
+
         // save image
         if ($request->hasFile('image')) {
             // remove old image
@@ -99,6 +105,7 @@ class ProductsController extends Controller
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('heto/products'), $imageName);
+            $inputs['image'] = $imageName;
         }
 
         // save file
@@ -111,14 +118,10 @@ class ProductsController extends Controller
             $file = $request->file('file');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('heto/products'), $fileName);
+            $inputs['file'] = $fileName;
         }
 
-        $product->update([
-            'name' => $request->name,
-            'desc' => $request->desc,
-            'image' => $imageName ?? $product->image,
-            'file' => $fileName ?? $product->file,
-        ]);
+        $product->update($inputs);
 
         return redirect()->route('products.index')->with(['success' => 'product ' . __("messages.update")]);
     }

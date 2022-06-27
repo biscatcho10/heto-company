@@ -12,6 +12,7 @@ class Product extends Model
     protected $fillable = [
         'name',
         'desc',
+        'model',
         'image',
         'file',
         'seo_title',
@@ -21,12 +22,18 @@ class Product extends Model
 
     public function getImageAttribute($value)
     {
-        return asset('heto/products' . $value);
+        return asset('heto/products/' . $value);
     }
 
     public function getFileAttribute($value)
     {
-        return asset('heto/products' . $value);
+        return asset('heto/products/' . $value);
+    }
+
+    // get created_at attribute
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
     }
 
 

@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- End css -->
 
+    <!-- seo data  -->
+    {!! $settings['google_analysis'] !!}
+    {!! $settings['facebook_pixel'] !!}
+
     <style>
         #break .content {
             background-image: url("{{ asset('heto/sections') }}/{{ $settings['hp_career_image'] }}");
@@ -31,7 +35,8 @@
     <header id="top" class="header-home">
         <div class="vertical-panel-top">
             <a href="{{ route('home') }}" class="logo_header">
-                <img src="{{ intval($settings['logo']) != 0 ? asset('heto/gallery/' . get_file_name(intval($settings['logo']))) : $settings['logo'] }}" alt="">
+                <img src="{{ intval($settings['logo']) != 0 ? asset('heto/gallery/' . get_file_name(intval($settings['logo']))) : $settings['logo'] }}"
+                    alt="">
             </a>
         </div>
         <div class="vertical-panel"></div>
@@ -74,9 +79,8 @@
 
                                 <!-- Main image-->
 
-                                <img src="{{ $slider->image }}" alt=""
-                                    data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                    class="rev-slidebg">
+                                <img src="{{ $slider->image }}" alt="" data-bgposition="center center"
+                                    data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
                                 <!-- Layer 1 -->
 
@@ -118,54 +122,54 @@
                             </li>
                         @empty
 
-                        <li data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000"
-                            data-fsmasterspeed="1000">
+                            <li data-transition="slotzoom-horizontal" data-slotamount="7" data-masterspeed="1000"
+                                data-fsmasterspeed="1000">
 
-                            <!-- Main image-->
+                                <!-- Main image-->
 
-                            <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt=""
-                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                class="rev-slidebg">
+                                <img src="{{ asset('assets/images/carousel-1.jpg') }}" alt=""
+                                    data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                    class="rev-slidebg">
 
-                            <!-- Layer 1 -->
+                                <!-- Layer 1 -->
 
-                            <div class="slide-title tp-caption tp-resizeme" data-x="['right','right','right','right']"
-                                data-hoffset="['-18','-18','50','18']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['120','70', '120']" data-fontsize="['50']"
-                                data-lineheight="['80','75', '65']" data-width="['1500','900','800']"
-                                data-height="none" data-whitespace="normal" data-transform_idle="o:1;"
-                                data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
-                                data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">We Do Our Job Safely And
-                                Carefully
-                            </div>
+                                <div class="slide-title tp-caption tp-resizeme"
+                                    data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
+                                    data-y="['middle','middle','middle','middle']" data-voffset="['120','70', '120']"
+                                    data-fontsize="['50']" data-lineheight="['80','75', '65']"
+                                    data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power2.easeInOut;"
+                                    data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                                    data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                                    data-splitin="chars" data-splitout="none" data-responsive_offset="on"
+                                    data-elementdelay="0.05">We Do Our Job Safely And
+                                    Carefully
+                                </div>
 
-                            <!-- Layer 2 -->
+                                <!-- Layer 2 -->
 
-                            <div class="slide-subtitle tp-caption tp-resizeme"
-                                data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['200','165', '280']"
-                                data-fontsize="['50','20']" data-lineheight="['30']"
-                                data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
-                                data-transform_idle="o:1;"
-                                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
-                                data-transform_out="opacity:0;s:1000;s:1000;"
-                                data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                                data-elementdelay="0.05">It is a long established fact
-                                that a reader
-                                will be distracted
-                            </div>
+                                <div class="slide-subtitle tp-caption tp-resizeme"
+                                    data-x="['right','right','right','right']" data-hoffset="['-18','-18','50','18']"
+                                    data-y="['middle','middle','middle','middle']" data-voffset="['200','165', '280']"
+                                    data-fontsize="['50','20']" data-lineheight="['30']"
+                                    data-width="['1500','900','800']" data-height="none" data-whitespace="normal"
+                                    data-transform_idle="o:1;"
+                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1200;e:Power1.easeInOut;"
+                                    data-transform_out="opacity:0;s:1000;s:1000;"
+                                    data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_in="x:50px;y:0px;s:inherit;e:inherit;"
+                                    data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
+                                    data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                                    data-elementdelay="0.05">It is a long established fact
+                                    that a reader
+                                    will be distracted
+                                </div>
 
-                            <!-- Layer 3 -->
+                                <!-- Layer 3 -->
 
-                        </li>
-
+                            </li>
                         @endforelse
 
                     </ul>
@@ -215,14 +219,14 @@
                     <!-- satrt text section  -->
                     <div class="text_about left d-flex justify-content-center flex-column flex-wrap"
                         data-aos="fade-right">
-                        <h5>{{ $settings['hp_about_title'] ?? "" }}</h5>
-                        <p>{!! $settings['hp_about_description'] ?? "" !!}</p>
+                        <h5>{{ $settings['hp_about_title'] ?? '' }}</h5>
+                        <p>{!! $settings['hp_about_description'] ?? '' !!}</p>
                     </div>
                     <!-- / text section  -->
 
                     <!-- satrt img section  -->
                     <div class="img_About" data-aos="fade-left">
-                        <img src="{{ asset('heto/sections/'. $settings['hp_about_image'] ) }}" alt="">
+                        <img src="{{ asset('heto/sections/' . $settings['hp_about_image']) }}" alt="">
                     </div>
                     <!-- / img section  -->
                 </div>
@@ -269,7 +273,8 @@
                             @if ($residential_projects->gallery != null)
                                 @foreach (json_decode($residential_projects->gallery) as $img)
                                     <div class="slider-item">
-                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}" alt="">
+                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
+                                            alt="">
                                     </div>
                                 @endforeach
                             @endif
@@ -289,7 +294,8 @@
                             @if ($commercial_projects->gallery != null)
                                 @foreach (json_decode($commercial_projects->gallery) as $img)
                                     <div class="slider-item">
-                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}" alt="">
+                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
+                                            alt="">
                                     </div>
                                 @endforeach
                             @endif
@@ -377,10 +383,12 @@
             <div class="portfolio_slider owl-carousel">
                 @foreach ($projects as $project)
                     <div class="slider-item">
-                        <img src="{{ asset('heto/gallery/' . get_file_name($project->thumbnail_image)) }}" alt="">
+                        <img src="{{ asset('heto/gallery/' . get_file_name($project->thumbnail_image)) }}"
+                            alt="">
                         <div class="container_" data-aos="fade-up">
                             <h3>{{ $project->type }}</h3>
-                            <a href="{{ route('show.project', $project->id) }}">View Project <i class="fas fa-angle-right"></i></a>
+                            <a href="{{ route('show.project', $project->id) }}">View Project <i
+                                    class="fas fa-angle-right"></i></a>
                         </div>
                     </div>
                 @endforeach
@@ -419,61 +427,23 @@
             <!-- satrt content  -->
             <div class="content">
                 <div class="row justify-content-between">
-                    <!-- satrt card  -->
-                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
-                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
-                        <div class="img_card">
-                            <img src="{{ asset('assets/images/Products/Products-1.jpg') }}" alt="Products">
-                        </div>
-                        <div class="content_card active">
-                            <span>Catalog</span>
-                            <h3>HITATCHI Global SideSmart General catalogue</h3>
-                            <p>Variable Refrigerant Flow system Slim Modular outdoor units Air source heat pump type</p>
-                            <h6><span>Model</span> SideSmart</h6>
-                        </div>
-                    </a>
-                    <!-- / card  -->
-                    <!-- satrt card  -->
-                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
-                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
-                        <div class="img_card">
-                            <img src="{{ asset('assets/images/Products/Products-2.jpg') }}" alt="Products">
-                        </div>
-                        <div class="content_card">
-                            <span>Catalog</span>
-                            <h3>VARIABLE REFRIGERANT FLOW</h3>
-                            <p>AIR SOURCE HEAT PUMP STANDARD AND HIGH EFFICIENCY (50 Hz)</p>
-                            <h6><span>Model</span> FSNSE1 / FSNPE1 SERIES</h6>
-                        </div>
-                    </a>
-                    <!-- / card  -->
-                    <!-- satrt card  -->
-                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
-                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
-                        <div class="img_card">
-                            <img src="{{ asset('assets/images/Products/Products-3.jpg') }}" alt="Products">
-                        </div>
-                        <div class="content_card">
-                            <span>Catalog</span>
-                            <h3>SET FREE mini</h3>
-                            <p>VARIABLE REFRIGERANT FLOW AIR SOURCE HEAT PUMP TYPE</p>
-                            <h6><span>Model</span> HNRQ SERIES</h6>
-                        </div>
-                    </a>
-                    <!-- / card  -->
-                    <a href="{{ asset('assets/pdf/book2.pdf') }}" target="_blank" class="card d-flex"
-                        data-aos="fade-up" data-aos-offset="100" data-aos-duration="900" data-aos-delay="700">
-                        <div class="img_card">
-                            <img src="{{ asset('assets/images/Products/Products-4.jpg') }}" alt="Products">
-                        </div>
-                        <div class="content_card active">
-                            <span>Catalog</span>
-                            <h3>SET FREE mini</h3>
-                            <p>VARIABLE REFRIGERANT FLOW AIR SOURCE HEAT PUMP TYPE</p>
-                            <h6><span>Model</span> HNCQ SERIES</h6>
-                        </div>
-                    </a>
-                    <!-- / card  -->
+                    @forelse ($products as $product)
+                        <!-- satrt card  -->
+                        <a href="{{ $product->file }}" target="_blank" class="card d-flex"
+                            data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
+                            <div class="img_card">
+                                <img src="{{ $product->image}}" alt="Products">
+                            </div>
+                            <div class="content_card active">
+                                <span>Catalog</span>
+                                <h3>{{ $product->name }}</h3>
+                                <p> {{ $product->desc }} </p>
+                                <h6><span>Model</span> {{ $product->model }}</h6>
+                            </div>
+                        </a>
+                        <!-- / card  -->
+                    @empty
+                    @endforelse
                 </div>
             </div>
             <!-- / content  -->
@@ -495,10 +465,10 @@
         </div>
         <div class="content d-flex align-items-center justify-content-center">
             <div class="break_content d-flex align-items-center justify-content-center flex-column">
-                <h2>{{ $settings['hp_career_title'] ?? "" }}</h2>
-                <p>{!! $settings['hp_career_description'] ?? "" !!}</p>
+                <h2>{{ $settings['hp_career_title'] ?? '' }}</h2>
+                <p>{!! $settings['hp_career_description'] ?? '' !!}</p>
                 <a href="{{ route('careers') }}" class="btn" data-aos="fade-in" data-aos-duration="500"
-                data-aos-delay="300">Request</a>
+                    data-aos-delay="300">Request</a>
             </div>
         </div>
     </section>
