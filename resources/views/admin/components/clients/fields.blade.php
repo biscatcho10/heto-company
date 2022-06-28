@@ -14,7 +14,7 @@
             {{ form::file('image',['class'=>'form-control'])}}
         </div>
     </div>
-    @if ($client->image != "http://heto.test/heto/clients")
+    @if ($client->image != asset('heto/clients'))
         <div class="col-sm-6">
             <div class="form-group">
                 <img src="{{$client->image}}" class="img-fluid" width="150px" height="150px">

@@ -29,7 +29,7 @@
             {{ form::file('image', ['class' => 'form-control']) }}
         </div>
     </div>
-    @if ($product->image != 'http://heto.test/heto/products')
+    @if ($product->image != asset('heto/products'))
         <div class="col-sm-6">
             <div class="form-group">
                 <img src="{{ $product->image }}" class="img-responsive" width="150px" height="150px">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    @if ($product->file != 'http://heto.test/heto/products')
+    @if ($product->file != asset('heto/products'))
         <div class="col-sm-6">
             <div class="form-group">
                 <!-- preview file -->

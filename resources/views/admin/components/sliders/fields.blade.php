@@ -23,7 +23,7 @@
             {{ form::file('image',['class'=>'form-control'])}}
         </div>
     </div>
-    @if ($slider->image != "http://heto.test/heto/sliders")
+    @if ($slider->image != asset('heto/sliders'))
         <div class="col-sm-6">
             <div class="form-group">
                 <img src="{{$slider->image}}" class="img-fluid" width="300px" height="300px">
