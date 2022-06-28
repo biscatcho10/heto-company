@@ -162,8 +162,7 @@ class HomeController extends Controller
         $next_project = Project::where('id', '>', $project->id)->where('project_type_id', $project->project_type_id)->first();
         $prev_project = Project::where('id', '<', $project->id)->where('project_type_id', $project->project_type_id)->first();
         $different_projects = Project::where('project_type_id', '!=', $project->project_type_id)->get();
-        return view(
-            'frontend.project',
+        return view('frontend.project',
             compact(
                 'settings',
                 'project',
