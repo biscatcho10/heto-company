@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
     <!-- End css -->
 
-    <!-- seo data  -->
-    {!! $settings['google_analysis'] !!}
-    {!! $settings['facebook_pixel'] !!}
+    @include('frontend.layouts.seo')
 </head>
 
 <body>
@@ -39,8 +37,8 @@
 
     <div class="layout">
         <main class="main">
-            <img src="{{ $banner ?? asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
-                data-bgrepeat="no-repeat" class="rev-slidebg" />
+            <img src="{{ $banner ?? asset('assets/images/carousel-1.jpg') }}" alt=""
+                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" />
         </main>
     </div>
 
@@ -87,7 +85,7 @@
                                 data-aos-delay="400">
                                 <div class="text num_experience">
                                     <!-- number of years from 1980  -->
-                                    {{ date_diff(date_create("0-01-1980"), date_create(date('Y')))->y }}
+                                    {{ date_diff(date_create('0-01-1980'), date_create(date('Y')))->y }}
 
                                 </div>
                             </div>
@@ -122,10 +120,10 @@
                             <!-- start top card  -->
                             <div class="top_card d-flex">
                                 <div class="icon">
-                                    <svg class="soavl" version="1.1" id="Layer_1"
-                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" viewBox="0 0 850.4 850.4"
-                                        style="enable-background:new 0 0 850.4 850.4;" xml:space="preserve">
+                                    <svg class="soavl" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 850.4 850.4" style="enable-background:new 0 0 850.4 850.4;"
+                                        xml:space="preserve">
                                         <g>
                                             <path
                                                 d="M170,547.4c0.8-4.4,1.5-8.8,2.4-13.2c4.2-19.9,14-36.9,28.3-51.2c34.1-34.2,68.3-68.3,102.5-102.4c6.4-6.4,11.5-6.3,18,0.1
@@ -250,7 +248,7 @@
                 <div class="right_section" data-aos="fade-left" data-aos-duration="500" data-aos-offset="70"
                     data-aos-delay="300">
                     <div class="text_founded">
-                        <img src="{{ asset('heto/sections/'. $settings['ceo_image'] ) }}" alt="">
+                        <img src="{{ asset('heto/sections/' . $settings['ceo_image']) }}" alt="">
                         <div class="name_founded">
                             {{ $settings['ceo_name'] }}<br>
                             <div>CEO/Owner/Founder</div>

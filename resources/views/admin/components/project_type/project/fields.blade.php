@@ -1,6 +1,12 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="form-group">
+            {{ form::label('title','Project Name')}}
+            {{form::text('name',$project->name,['class'=>'form-control','placeholder'=>'Project Name'])}}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
             {{ form::label('title','Title 1')}}
             {{form::text('title',$project->title,['class'=>'form-control','placeholder'=>'Title'])}}
         </div>
@@ -9,12 +15,6 @@
         <div class="form-group">
             {{ form::label('title','Title 2')}}
             {{form::text('title2',$project->title2,['class'=>'form-control','placeholder'=>'Title'])}}
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="form-group">
-            {{ form::label('title','Project Name')}}
-            {{form::text('name',$project->name,['class'=>'form-control','placeholder'=>'Project Name'])}}
         </div>
     </div>
     <div class="col-md-4">

@@ -16,8 +16,9 @@
                 <thead class="text-uppercase">
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Description</th>
+                    {{-- <th scope="col">Description</th> --}}
                     <th scope="col">Thumbnail image</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -26,6 +27,7 @@
                 @foreach($projects as $project)
                     <tr>
                         <th scope="row">{{$project->id}}</th>
+                        <td>{{$project->name}}</td>
                         <td>{{$project->title}}</td>
                         <td>{{$project->description}}</td>
                         <td>{{$project->thumbnail_image}}</td>
@@ -48,10 +50,10 @@
                                     </form>
                                 </li>
                                 <li>
-                                    <button type="button" 
-                                    class="btn btn-primary btn-sm" 
-                                    data-toggle="modal" 
-                                    data-target="#moveModal{{$project->id}}"  
+                                    <button type="button"
+                                    class="btn btn-primary btn-sm"
+                                    data-toggle="modal"
+                                    data-target="#moveModal{{$project->id}}"
                                     data-backdrop="static" data-keyboard="false" >
                                     Move
                                     </button>
@@ -59,26 +61,26 @@
                                 </li>
 
                                 <li>
-                                    <button type="button" 
-                                    class="btn btn-primary btn-sm" 
-                                    data-toggle="modal" 
-                                    data-target="#copyModal{{$project->id}}"  
+                                    <button type="button"
+                                    class="btn btn-primary btn-sm"
+                                    data-toggle="modal"
+                                    data-target="#copyModal{{$project->id}}"
                                     data-backdrop="static" data-keyboard="false" >
                                     Copy
                                     </button>
                                     @include('admin.components.project_type.project.action_modal',$attr = ['modal_name'=>'copyModal'.$project->id,'id'=>$project->id,'project_type'=>$project->project_type_id,'action'=>'copy'] )
                                 </li>
                                 <li>
-                                    <button type="button" 
-                                    class="btn btn-primary btn-sm" 
-                                    data-toggle="modal" 
-                                    data-target="#cloneModal{{$project->id}}"  
+                                    <button type="button"
+                                    class="btn btn-primary btn-sm"
+                                    data-toggle="modal"
+                                    data-target="#cloneModal{{$project->id}}"
                                     data-backdrop="static" data-keyboard="false" >
                                     Clone
                                     </button>
                                     @include('admin.components.project_type.project.action_modal',$attr = ['modal_name'=>'cloneModal'.$project->id,'id'=>$project->id,'project_type'=>$project->project_type_id,'action'=>'clone'] )
                                 </li>
-                                
+
                             </ul>
                         </td>
                     </tr>

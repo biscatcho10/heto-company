@@ -47,4 +47,12 @@ class Project extends Model
     {
         return date('Y-m-d', strtotime($value));
     }
+
+
+    // get created_at attribute
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
+    }
+
 }

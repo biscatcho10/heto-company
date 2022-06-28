@@ -9,8 +9,8 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-2">
-                    <a href="{{ route('projects.create') }}" type="button" class="btn btn-block btn-primary btn-md">Create
-                        Project</a>
+                    <a href="{{ route('projects.create') }}" type="button" class="btn btn-block btn-primary btn-md">
+                        Create Project</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->

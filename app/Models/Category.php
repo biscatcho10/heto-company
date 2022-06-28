@@ -12,4 +12,11 @@ class Category extends Model
     public static $cast = [
         'title' => 'required',
     ];
+
+
+    // get created_at attribute
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d-m-Y', strtotime($value));
+    }
 }

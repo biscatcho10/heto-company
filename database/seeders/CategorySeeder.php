@@ -17,15 +17,19 @@ class CategorySeeder extends Seeder
         DB::table("categories")->insert([
             [
                 'title' => 'Hotel',
+                'created_at' => now(),
             ],
             [
                 'title' => 'Restaurant',
+                'created_at' => now(),
             ],
             [
                 'title' => 'Hospital',
+                'created_at' => now(),
             ],
             [
                 'title' => 'Mall',
+                'created_at' => now(),
             ],
         ]);
     }

@@ -19,14 +19,17 @@ class JobSeeder extends Seeder
             [
                 'title' => 'IT',
                 'description' => $faker->address(),
+                'created_at' => now(),
             ],
             [
                 'title' => 'HR',
                 'description' => $faker->address(),
+                'created_at' => now(),
             ],
             [
                 'title' => 'Manger',
                 'description' => $faker->address(),
+                'created_at' => now(),
             ],
         ]);
     }

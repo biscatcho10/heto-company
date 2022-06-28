@@ -8,9 +8,6 @@
     <link rel="icon" href="{{ $settings['favicon'] }}" />
     <title>HETO Dedign</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-
     <!-- start css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
@@ -30,9 +27,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
     <!-- End css -->
 
-    <!-- seo data  -->
-    {!! $settings['google_analysis'] !!}
-    {!! $settings['facebook_pixel'] !!}
+    @include('frontend.layouts.seo')
 </head>
 
 <body>

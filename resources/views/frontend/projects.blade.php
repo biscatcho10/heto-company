@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
     <!-- End css -->
 
-    <!-- seo data  -->
-    {!! $settings['google_analysis'] !!}
-    {!! $settings['facebook_pixel'] !!}
+    @include('frontend.layouts.seo')
 </head>
 
 <body>

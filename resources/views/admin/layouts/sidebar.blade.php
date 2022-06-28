@@ -49,6 +49,12 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="{{areActiveRoutes(['products.*'])}}">
+                        <a href="{{route("products.index")}}" >
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
                     <li class="{{areActiveRoutes(['careers.*'])}}">
                         <a href="{{route("careers.index")}}" >
                             <i class="fa fa-briefcase"></i>
@@ -67,28 +73,10 @@
                             <span>Jobs</span>
                         </a>
                     </li>
-                    <li class="{{areActiveRoutes(['banners.*'])}}">
-                        <a href="{{route("banners.index")}}" >
-                            <i class="ti-gallery"></i>
-                            <span>Banners</span>
-                        </a>
-                    </li>
                     <li class="{{areActiveRoutes(['clients.*'])}}">
                         <a href="{{route("clients.index")}}" >
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <span>Clients</span>
-                        </a>
-                    </li>
-                    <li class="{{areActiveRoutes(['products.*'])}}">
-                        <a href="{{route("products.index")}}" >
-                            <i class="fas fa-shopping-bag"></i>
-                            <span>Products</span>
-                        </a>
-                    </li>
-                    <li class="{{areActiveRoutes(['sliders.*'])}}">
-                        <a href="{{route("sliders.index")}}" >
-                            <i class="ti-gallery"></i>
-                            <span>Sliders</span>
                         </a>
                     </li>
                     <li class="{{areActiveRoutes(['sections.*'])}}">
@@ -97,16 +85,22 @@
                             <span>Sections</span>
                         </a>
                     </li>
+                    <li class="{{areActiveRoutes(['sliders.*'])}}">
+                        <a href="{{route("sliders.index")}}" >
+                            <i class="ti-gallery"></i>
+                            <span>Sliders</span>
+                        </a>
+                    </li>
+                    <li class="{{areActiveRoutes(['banners.*'])}}">
+                        <a href="{{route("banners.index")}}" >
+                            <i class="ti-gallery"></i>
+                            <span>Banners</span>
+                        </a>
+                    </li>
                     <li class="{{areActiveRoutes(['settings.*'])}}">
                         <a href="{{route("settings.index")}}" >
                             <i class="fa fa-gear"></i>
                             <span>Settings</span>
-                        </a>
-                    </li>
-                    <li class="{{areActiveRoutes(['contacts.*'])}}">
-                        <a href="{{route("contacts.index")}}" >
-                            <i class="ti-comment"></i>
-                            <span>Contact Us</span>
                         </a>
                     </li>
                     <li class="{{areActiveRoutes(['about.*'])}}">
@@ -119,6 +113,12 @@
                         <a href="{{route("seos.index")}}" >
                             <i class="fas fa-search"></i>
                             <span>Seo</span>
+                        </a>
+                    </li>
+                    <li class="{{areActiveRoutes(['contacts.*'])}}">
+                        <a href="{{route("contacts.index")}}" >
+                            <i class="ti-comment"></i>
+                            <span>Contact Us</span>
                         </a>
                     </li>
                 </ul>

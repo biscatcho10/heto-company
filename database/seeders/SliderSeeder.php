@@ -29,6 +29,11 @@ class SliderSeeder extends Seeder
                 'title' => 'Modern hotel in london',
                 'subtitle' => 'Concert Hall is the architecture of a new generation, a building',
                 'image' => 'carousel-3.jpg',
+            ],
+            [
+                'title' => 'Modern hotel in london',
+                'subtitle' => 'Concert Hall is the architecture of a new generation, a building',
+                'image' => 'carousel-4.jpg',
             ]
         ];
 

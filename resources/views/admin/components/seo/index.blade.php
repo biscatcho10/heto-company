@@ -9,13 +9,18 @@
                     @csrf
                     <div class="row">
                         @foreach($seos as $seo)
-                            <div class="col-6">
+                            <div class="{{ str_contains($seo->type, 'description') ? 'col-12' : 'col-6' }}">
                                     {{ form::label($seo->message,$seo->message,['class'=>'col-form-label'])}}
                                 @if(str_contains($seo->type, 'description'))
-                                    {{ form::textarea($seo->type, $seo->value, ['class'=>'form-control','rows'=>'1']) }}
+                                    {{ form::textarea($seo->type, $seo->value, ['class'=>'form-control','rows'=>'2']) }}
                                 @else
                                     {{ form::text($seo->type, $seo->value, ['class'=>'form-control']) }}
                                 @endif
+
+                                @if(str_contains($seo->type, 'description'))
+                                    <br> <hr> <br>
+                                @endif
+
                             </div>
                         @endforeach
                     </div>

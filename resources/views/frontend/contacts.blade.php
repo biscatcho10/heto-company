@@ -27,9 +27,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/layout-singl-page.css') }}">
     <!-- End css -->
 
-    <!-- seo data  -->
-    {!! $settings['google_analysis'] !!}
-    {!! $settings['facebook_pixel'] !!}
+    @include('frontend.layouts.seo')
 </head>
 
 <body>
@@ -39,8 +37,8 @@
 
     <div class="layout">
         <main class="main">
-            <img src="{{ $banner ?? asset('assets/images/carousel-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover"
-                data-bgrepeat="no-repeat" class="rev-slidebg" />
+            <img src="{{ $banner ?? asset('assets/images/carousel-1.jpg') }}" alt=""
+                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" />
         </main>
     </div>
 
@@ -2424,8 +2422,8 @@
                         <textarea placeholder="Here goes your message" name="message" id="" cols="30" rows="10"
                             data-aos="fade-up" data-aos-duration="700" data-aos-delay="50" required></textarea>
 
-                        <button type="submit" class="btn_form" data-aos="fade-in"
-                        data-aos-duration="700" data-aos-delay="500">Send Message</button>
+                        <button type="submit" class="btn_form" data-aos="fade-in" data-aos-duration="700"
+                            data-aos-delay="500">Send Message</button>
                     </form>
                 </div>
             </div>

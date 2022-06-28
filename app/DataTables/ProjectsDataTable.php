@@ -75,8 +75,9 @@ class ProjectsDataTable extends DataTable
     {
         return [
             Column::make('id')->title('ID'),
+            Column::make('name'),
             Column::make('title'),
-            Column::make('description'),
+            // Column::make('description'),
             Column::make('case_study')->title('Case Study'),
             Column::make('location'),
             Column::make('Category'),

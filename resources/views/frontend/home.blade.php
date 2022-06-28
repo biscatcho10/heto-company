@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     <!-- End css -->
 
-    <!-- seo data  -->
-    {!! $settings['google_analysis'] !!}
-    {!! $settings['facebook_pixel'] !!}
+    @include('frontend.layouts.seo')
 
     <style>
         #break .content {
