@@ -26,8 +26,10 @@ class Project extends Model
         'seo_keywords'
     ];
     public static $cast = [
-        'title' => 'required',
-        'description' => 'required',
+        'title' => 'string|required|max:255',
+        'title2' => 'string|max:255',
+        'name' => 'string|required|max:255',
+        'date' => 'required',
         'location' => 'required',
         'gallery' => 'required|array',
         'thumbnail_image' => 'required',

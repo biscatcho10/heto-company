@@ -15,7 +15,7 @@ class CreateSeoTable extends Migration
     {
         Schema::create('seos', function (Blueprint $table) {
             $table->id();
-            $table->string("type", 30);
+            $table->string("type");
             $table->longText("value");
             $table->timestamps();
         });

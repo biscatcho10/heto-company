@@ -30,9 +30,9 @@ class HomeController extends Controller
     public function index()
     {
         $settings = $this->settings;
-        $commercial_projects = ProjectType::where('title', 'Commercial')->first();
-        $residential_projects = ProjectType::where('title', 'Residential')->first();
-        $industrial_projects = ProjectType::where('title', 'Industrial')->first();
+        $commercial_projects = ProjectType::find(1);
+        $residential_projects = ProjectType::find(2);
+        $industrial_projects = ProjectType::find(3);
         $sliders = Slider::all();
         $clients = Client::all();
         $products = Product::all()->take(4);
@@ -81,7 +81,7 @@ class HomeController extends Controller
         $upload = Banner::where('page_key', 'projects')->first()->upload_id;
         $banner = $upload ? $banner = asset('heto/gallery/' . get_file_name($upload)) : null;
         $settings = $this->settings;
-        $projects = Project::whereIn('project_type_id', [1, 2])->paginate(6);
+        $projects = Project::whereIn('project_type_id', [1, 2])->orderBy('id', 'DESC')->paginate(6);
         $seo_title = $this->seo['project_seo_title'];
         $seo_description = $this->seo['project_seo_description'];
         $seo_keywords = $this->seo['project_seo_keywords'];
