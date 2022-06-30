@@ -91,9 +91,7 @@
                             @endforelse
 
                         </div>
-                        <div class="Pagination">
-                            {{-- {{ $projects->links() }} --}}
-                        </div>
+                        <div id="pagination" class="pagination"></div>
 
 
                     </div>
@@ -133,7 +131,15 @@
                 midRange: 3,
                 endRange: 1,
                 first: false,
-                last: false
+                last: false,
+                callback : function( pages, items ){
+                    document.querySelector('.jp-previous').innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
+                    `;
+                    document.querySelector('.jp-next').innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>
+                    `;
+                },
             });
         }
 
@@ -148,6 +154,7 @@
                 onMixLoad: function(state,futureState ){
                     console.log('mix Loaded');
                     //setPagination();
+
                 },
                 onMixStart: function(state,futureState ){
                     destroyPagination();
@@ -160,7 +167,17 @@
         });
 
 
+        // setTimeout(() => {
+        //     let previous = document.queryselector('.jp-previous'),
+        //             next = document.queryselector('.jp-next')
 
+        //     previous.innerHTML = `
+        //         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
+        //     `;
+        //     next.innerHTML = `
+        //         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>
+        //     `;
+        // }, 50);
 
 
     </script>
