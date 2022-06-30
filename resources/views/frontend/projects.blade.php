@@ -116,56 +116,6 @@
     <!-- / Services -->
 
 
-    {{-- <section>
-        <div id="categories" class="categories">
-            <button class="filter" data-filter="all">All</button>
-            <button class="filter blue" data-filter=".blue-color">Blue</button>
-            <button class="filter green" data-filter=".green-color">Green</button>
-            <button class="filter yellow" data-filter=".yellow-color">Yellow</button>
-          </div>
-
-          <div style="clear: both"></div>
-
-          <div class="wrapper" id="Container">
-            <div class="mix blue-color">A</div>
-            <div class="mix green-color">B</div>
-            <div class="mix yellow-color">C</div>
-            <div class="mix yellow-color">D</div>
-            <div class="mix blue-color">E</div>
-            <div class="mix yellow-color">F</div>
-            <div class="mix green-color">G</div>
-            <div class="mix yellow-color">H</div>
-            <div class="mix blue-color">I</div>
-            <div class="mix yellow-color">J</div>
-            <div class="mix green-color">K</div>
-            <div class="mix yellow-color">L</div>
-            <div class="mix yellow-color">M</div>
-            <div class="mix blue-color">N</div>
-            <div class="mix green-color">O</div>
-            <div class="mix yellow-color">P</div>
-            <div class="mix yellow-color">Q</div>
-            <div class="mix green-color">R</div>
-            <div class="mix blue-color">S</div>
-            <div class="mix yellow-color">T</div>
-            <div class="mix green-color">U</div>
-            <div class="mix green-color">V</div>
-            <div class="mix yellow-color">W</div>
-            <div class="mix blue-color">X</div>
-            <div class="mix yellow-color">Y</div>
-            <div class="mix yellow-color">Z</div>
-
-            <div class="mix green-color">A</div>
-            <div class="mix yellow-color">B</div>
-            <div class="mix blue-color">C</div>
-            <div class="mix green-color">D</div>
-            <div class="mix green-color">E</div>
-            <div class="mix blue-color">F</div>
-          </div>
-          <div style="clear:both"></div>
-
-          <div id="pagination" class="pagination"></div>
-    </section> --}}
-
     <!-- start footer  -->
     @include('frontend.layouts.footer')
     <!-- / footer  -->
