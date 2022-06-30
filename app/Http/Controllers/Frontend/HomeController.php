@@ -30,8 +30,8 @@ class HomeController extends Controller
     public function index()
     {
         $settings = $this->settings;
-        $commercial_projects = ProjectType::find(1);
-        $residential_projects = ProjectType::find(2);
+        $commercial_project = ProjectType::find(1)->projects->last();
+        $residential_project = ProjectType::find(2)->projects->last();
         $industrial_projects = ProjectType::find(3);
         $sliders = Slider::all();
         $clients = Client::all();
@@ -51,8 +51,8 @@ class HomeController extends Controller
             'frontend.home',
             compact(
                 'settings',
-                'commercial_projects',
-                'residential_projects',
+                'commercial_project',
+                'residential_project',
                 'industrial_projects',
                 'sliders',
                 'clients',
