@@ -90,7 +90,7 @@
 
                         </div>
                         <div class="Pagination">
-                            {{ $projects->links() }}
+                            {{-- {{ $projects->links() }} --}}
                         </div>
                     </div>
                 </div>

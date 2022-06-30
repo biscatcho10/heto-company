@@ -81,7 +81,8 @@ class HomeController extends Controller
         $upload = Banner::where('page_key', 'projects')->first()->upload_id;
         $banner = $upload ? $banner = asset('heto/gallery/' . get_file_name($upload)) : null;
         $settings = $this->settings;
-        $projects = Project::whereIn('project_type_id', [1, 2])->orderBy('id', 'DESC')->paginate(6);
+        // $projects = Project::whereIn('project_type_id', [1, 2])->orderBy('id', 'DESC')->paginate(6);
+        $projects = Project::whereIn('project_type_id', [1, 2])->orderBy('id', 'DESC')->get();
         $seo_title = $this->seo['project_seo_title'];
         $seo_description = $this->seo['project_seo_description'];
         $seo_keywords = $this->seo['project_seo_keywords'];
