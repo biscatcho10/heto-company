@@ -65,11 +65,13 @@
             <div class="content">
                 <div class="row justify-content-around">
                     <div class="filer-img">
-                        <ul class="controls">
+                        <ul id="categories" class="controls">
                             <li class="filter" data-filter="all">All</li>
                             <li class="filter" data-filter=".category-1">Commercial</li>
                             <li class="filter" data-filter=".category-2">Residnination</li>
                         </ul>
+                        <div style="clear: both"></div>
+
                         <div id="myFilter" class="myFilter">
 
                             @forelse ($projects as $project)
@@ -89,7 +91,8 @@
                             @endforelse
 
                         </div>
-                        <div class="Pagination">
+                        <div style="clear:both"></div>
+                        <div id="pagination" class="pagination">
                             {{-- <i class="fas fa-angle-left"></i>
                             <ul>
                                 <li class="active">1</li>
@@ -99,9 +102,11 @@
                             </ul>
                             <i class="fas fa-angle-right"></i> --}}
 
-                            {{ $projects->links() }}
+                            {{-- {{ $projects->links() }} --}}
 
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -109,6 +114,57 @@
         </div>
     </section>
     <!-- / Services -->
+
+
+    {{-- <section>
+        <div id="categories" class="categories">
+            <button class="filter" data-filter="all">All</button>
+            <button class="filter blue" data-filter=".blue-color">Blue</button>
+            <button class="filter green" data-filter=".green-color">Green</button>
+            <button class="filter yellow" data-filter=".yellow-color">Yellow</button>
+          </div>
+
+          <div style="clear: both"></div>
+
+          <div class="wrapper" id="Container">
+            <div class="mix blue-color">A</div>
+            <div class="mix green-color">B</div>
+            <div class="mix yellow-color">C</div>
+            <div class="mix yellow-color">D</div>
+            <div class="mix blue-color">E</div>
+            <div class="mix yellow-color">F</div>
+            <div class="mix green-color">G</div>
+            <div class="mix yellow-color">H</div>
+            <div class="mix blue-color">I</div>
+            <div class="mix yellow-color">J</div>
+            <div class="mix green-color">K</div>
+            <div class="mix yellow-color">L</div>
+            <div class="mix yellow-color">M</div>
+            <div class="mix blue-color">N</div>
+            <div class="mix green-color">O</div>
+            <div class="mix yellow-color">P</div>
+            <div class="mix yellow-color">Q</div>
+            <div class="mix green-color">R</div>
+            <div class="mix blue-color">S</div>
+            <div class="mix yellow-color">T</div>
+            <div class="mix green-color">U</div>
+            <div class="mix green-color">V</div>
+            <div class="mix yellow-color">W</div>
+            <div class="mix blue-color">X</div>
+            <div class="mix yellow-color">Y</div>
+            <div class="mix yellow-color">Z</div>
+
+            <div class="mix green-color">A</div>
+            <div class="mix yellow-color">B</div>
+            <div class="mix blue-color">C</div>
+            <div class="mix green-color">D</div>
+            <div class="mix green-color">E</div>
+            <div class="mix blue-color">F</div>
+          </div>
+          <div style="clear:both"></div>
+
+          <div id="pagination" class="pagination"></div>
+    </section> --}}
 
     <!-- start footer  -->
     @include('frontend.layouts.footer')
@@ -118,11 +174,56 @@
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/aos.min.js') }}"></script>
     <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
+    <script src="https://cdn.shopify.com/s/files/1/0771/2161/t/3/assets/jPages.min.js?10688064064350896456"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
-        $(function() {
-            $('#myFilter').mixItUp();
+        // $(function() {
+        //     $('#myFilter').mixItUp();
+        // });
+
+
+
+        var pagination = $('.pagination');
+
+        function setPagination(){
+            pagination.jPages({
+                containerID: 'myFilter',
+                perPage: 6,
+                startPage: 1,
+                startRange: 1,
+                midRange: 3,
+                endRange: 1,
+                first: false,
+                last: false
+            });
+        }
+
+        function destroyPagination() {
+            pagination.jPages('destroy');
+        };
+
+        setPagination();
+
+        $('#myFilter').mixItUp({
+            callbacks: {
+                onMixLoad: function(state,futureState ){
+                    console.log('mix Loaded');
+                    //setPagination();
+                },
+                onMixStart: function(state,futureState ){
+                    destroyPagination();
+                },
+                onMixEnd: function(state, futureState){
+                    console.log('mix End');
+                     setPagination();
+                }
+            }
         });
+
+
+
+
+
     </script>
 </body>
 
