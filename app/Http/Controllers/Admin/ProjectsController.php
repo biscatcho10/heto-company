@@ -126,6 +126,24 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'title2' => 'nullable|max:255',
+            'name' => 'required|max:255',
+            'date' => 'required',
+            'location' => 'required',
+            'category_id' => 'required',
+            'project_type_id' => 'required',
+            'thumbnail_image' => 'required',
+        ]);
+        if ($request->gallery == "[]"){
+            $request->validate([
+                'gallery' => 'required|array',
+            ],[
+                'gallery.array' => 'Gallery is required',
+            ]);
+        }
         $input = $request->all();
         $project = Project::find($id);
         if ($input['gallery'] == null)

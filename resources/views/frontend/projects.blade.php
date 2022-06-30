@@ -91,19 +91,8 @@
                             @endforelse
 
                         </div>
-                        <div style="clear:both"></div>
-                        <div id="pagination" class="pagination">
-                            {{-- <i class="fas fa-angle-left"></i>
-                            <ul>
-                                <li class="active">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                            </ul>
-                            <i class="fas fa-angle-right"></i> --}}
-
+                        <div class="Pagination">
                             {{-- {{ $projects->links() }} --}}
-
                         </div>
 
 

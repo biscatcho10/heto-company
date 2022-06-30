@@ -417,7 +417,7 @@
                     </h3>
                 </div>
                 <div class="see_all">
-                    <a href="#">See all Products</a>
+                    <a href="{{ route('products') }}">See all Products</a>
                 </div>
             </div>
             <!-- / title section  -->
