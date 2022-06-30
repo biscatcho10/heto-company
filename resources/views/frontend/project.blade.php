@@ -135,7 +135,9 @@
                     <img src="{{ asset('heto/gallery/' . get_file_name($proj->thumbnail_image)) }}" alt="" />
                     <div class="text_card">
                         <p>{{ $proj->date }}</p>
-                        <h3>{{ $proj->name }}</h3>
+                        <a href="{{ route('show.project', $proj->id) }}">
+                            <h3>{{ $proj->name }}</h3>
+                        </a>
                     </div>
                 </div>
             @empty

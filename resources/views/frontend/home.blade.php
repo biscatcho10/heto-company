@@ -261,46 +261,54 @@
             <!-- satrt content  -->
             <div class="content">
                 <div class="row justify-content-between" data-aos="fade-up">
-                    <!-- satrt card  -->
-                    <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
-                        data-aos-duration="600" data-aos-delay="500">
+                    @isset($residential_project)
+                        <!-- satrt card  -->
+                        <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
+                            data-aos-duration="600" data-aos-delay="500">
 
-                        <div class="app"></div>
-                        <h5>Residential</h5>
-                        <div class="header_slider owl-carousel">
-                            @if ($residential_projects->gallery != null)
-                                @foreach (json_decode($residential_projects->gallery) as $img)
-                                    <div class="slider-item">
-                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
-                                            alt="">
-                                    </div>
-                                @endforeach
-                            @endif
-                        </div>
-                        <p> {{ $residential_projects->description }} </p>
+                            <div class="app"></div>
+                            <h5>Residential</h5>
+                            <div class="header_slider owl-carousel">
+                                @if ($residential_project->gallery != null)
+                                    @foreach (json_decode($residential_project->gallery) as $img)
+                                        <div class="slider-item">
+                                            <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
+                                                alt="">
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                            <a href="{{ route('show.project', $residential_project->id) }}">
+                                <p> {{ $residential_project->name }} </p>
+                            </a>
 
-                    </div>
-                    <!-- / card  -->
-                    <!-- satrt card  -->
-                    <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
-                        data-aos-duration="600" data-aos-delay="500">
-                        <div class="after"></div>
-                        <div class="before"></div>
-                        <div class="app"></div>
-                        <h5>COmmercial</h5>
-                        <div class="header_slider owl-carousel">
-                            @if ($commercial_projects->gallery != null)
-                                @foreach (json_decode($commercial_projects->gallery) as $img)
-                                    <div class="slider-item">
-                                        <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
-                                            alt="">
-                                    </div>
-                                @endforeach
-                            @endif
                         </div>
-                        <p> {{ $commercial_projects->description }} </p>
-                    </div>
-                    <!-- / card  -->
+                        <!-- / card  -->
+                    @endisset
+                    @isset($commercial_project)
+                        <!-- satrt card  -->
+                        <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
+                            data-aos-duration="600" data-aos-delay="500">
+                            <div class="after"></div>
+                            <div class="before"></div>
+                            <div class="app"></div>
+                            <h5>COmmercial</h5>
+                            <div class="header_slider owl-carousel">
+                                @if ($commercial_project->gallery != null)
+                                    @foreach (json_decode($commercial_project->gallery) as $img)
+                                        <div class="slider-item">
+                                            <img src="{{ asset('heto/gallery/' . get_file_name($img)) }}"
+                                                alt="">
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                            <a href="{{ route('show.project', $commercial_project->id) }}">
+                                <p> {{ $commercial_project->name }} </p>
+                            </a>
+                        </div>
+                        <!-- / card  -->
+                    @endisset
                 </div>
 
             </div>
@@ -427,10 +435,10 @@
                 <div class="row justify-content-between">
                     @forelse ($products as $product)
                         <!-- satrt card  -->
-                        <a href="{{ $product->file }}" target="_blank" class="card d-flex"
-                            data-aos="fade-up" data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
+                        <a href="{{ $product->file }}" target="_blank" class="card d-flex" data-aos="fade-up"
+                            data-aos-offset="100" data-aos-duration="600" data-aos-delay="500">
                             <div class="img_card">
-                                <img src="{{ $product->image}}" alt="Products">
+                                <img src="{{ $product->image }}" alt="Products">
                             </div>
                             <div class="content_card active">
                                 <span>Catalog</span>
