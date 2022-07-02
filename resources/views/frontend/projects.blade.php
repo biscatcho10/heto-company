@@ -10,7 +10,6 @@
 
     <!-- start css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
 
     <!-- start min style  -->
@@ -111,15 +110,9 @@
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/aos.min.js') }}"></script>
     <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
-    <script src="https://cdn.shopify.com/s/files/1/0771/2161/t/3/assets/jPages.min.js?10688064064350896456"></script>
+    <script src="{{ asset('assets/js/jPages.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
-        // $(function() {
-        //     $('#myFilter').mixItUp();
-        // });
-
-
-
         var pagination = $('.pagination');
 
         function setPagination(){
@@ -132,6 +125,7 @@
                 endRange: 1,
                 first: false,
                 last: false,
+                animation   : "bounceInUp",
                 callback : function( pages, items ){
                     document.querySelector('.jp-previous').innerHTML = `
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
@@ -165,20 +159,6 @@
                 }
             }
         });
-
-
-        // setTimeout(() => {
-        //     let previous = document.queryselector('.jp-previous'),
-        //             next = document.queryselector('.jp-next')
-
-        //     previous.innerHTML = `
-        //         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
-        //     `;
-        //     next.innerHTML = `
-        //         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>
-        //     `;
-        // }, 50);
-
 
     </script>
 </body>

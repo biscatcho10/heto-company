@@ -98,7 +98,7 @@ a {
 li {
     list-style: none;
 }
-.container_ {
+.container_, .tp-parallax-wrap {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -486,6 +486,7 @@ nav .phone .active > a {
 .navbar-desctop-menu > li > a {
     color: #30486d;
     margin-bottom: 1.5em;
+    transition: all ease-in-out .3s;
 }
 .navbar-desctop-menu li ul {
     position: absolute;
@@ -1104,7 +1105,7 @@ footer .linke li {
     left: 50%;
 }
 #Projects .card {
-    padding: 50px;
+    padding: 50px 70px;
     width: 47%;
     -webkit-transition: background 0.6s ease-in-out;
     transition: background 0.6s ease-in-out;
@@ -1114,6 +1115,7 @@ footer .linke li {
     color: #fff;
     text-transform: uppercase;
     padding-left: 2px;
+    margin-top: 20px;
 }
 #Projects .card img {
     height: auto;
@@ -1149,11 +1151,12 @@ footer .linke li {
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     bottom: 0;
+    width: 100%;
 }
 #Projects .owl-carousel .owl-item img {
     display: block;
     width: 101%;
-    max-height: 230px !important;
+    height: 300px !important;
     object-fit: cover;
 }
 #Projects .owl-carousel .owl-dots .owl-dot {
@@ -1368,6 +1371,7 @@ footer .linke li {
     margin-bottom: 30px;
     font-family: Montserrat-Light;
     color: #e5e9f0;
+    font-size: 0.86rem;
 }
 #Products .card .content_card h6 {
     font-family: Montserrat-Light;
@@ -1595,3 +1599,35 @@ textarea.parsley-error {
 
 
 
+.rev_slider_wrapper .tp-revslider-slidesli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-left: auto !important;
+    margin-right: auto !important; */
+}
+
+.rev_slider_wrapper .tp-parallax-wrap{
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+}
+
+.rev_slider_wrapper .tp-parallax-wrap:last-child{
+    margin-bottom: -180px;
+}
+
+.rev_slider_wrapper .tp-parallax-wrap div{
+    position: initial !important;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.rev_slider_wrapper .tp-parallax-wrap > div > div > div{
+    max-width: 60% !important;
+    margin-left: auto;
+    min-width: 60% !important;
+}

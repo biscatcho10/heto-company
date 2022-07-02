@@ -39,7 +39,7 @@
     .vertical-panel-top .logo_header img {
         min-height: 120px;
     }
-    .container_ {
+    .container_ , .tp-parallax-wrap{
         max-width: 1200px;
     }
     .vertical-panel-title {
@@ -389,6 +389,14 @@
     }
     .rev_slider .slide-subtitle.tp-caption.tp-resizeme {
         font-size: 0.8rem !important;
+    }
+    .rev_slider_wrapper .tp-parallax-wrap:last-child {
+        margin-bottom: -150px;
+    }
+    .rev_slider_wrapper .tp-parallax-wrap > div > div > div{
+        max-width: 70% !important;
+        margin-left: auto;
+        min-width: 70% !important;
     }
     .vertical-panel-top {
         width: 100%;
