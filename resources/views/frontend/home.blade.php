@@ -263,7 +263,7 @@
                 <div class="row justify-content-between" data-aos="fade-up">
                     @isset($residential_project)
                         <!-- satrt card  -->
-                        <div class="card d-flex flex-column justify-content-center" data-aos="fade-up"
+                        <div class="card d-flex flex-column justify-content-center active" data-aos="fade-up"
                             data-aos-duration="600" data-aos-delay="500">
 
                             <div class="app"></div>
