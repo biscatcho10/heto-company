@@ -10,7 +10,6 @@
 
     <!-- start css -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
 
     <!-- start min style  -->
@@ -65,11 +64,13 @@
             <div class="content">
                 <div class="row justify-content-around">
                     <div class="filer-img">
-                        <ul class="controls">
+                        <ul id="categories" class="controls">
                             <li class="filter" data-filter="all">All</li>
                             <li class="filter" data-filter=".category-1">Commercial</li>
                             <li class="filter" data-filter=".category-2">Residnination</li>
                         </ul>
+                        <div style="clear: both"></div>
+
                         <div id="myFilter" class="myFilter">
 
                             @forelse ($projects as $project)
@@ -89,9 +90,9 @@
                             @endforelse
 
                         </div>
-                        <div class="Pagination">
-                            {{ $projects->links() }}
-                        </div>
+                        <div id="pagination" class="pagination"></div>
+
+
                     </div>
                 </div>
             </div>
@@ -99,6 +100,7 @@
         </div>
     </section>
     <!-- / Services -->
+
 
     <!-- start footer  -->
     @include('frontend.layouts.footer')
@@ -108,11 +110,56 @@
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/aos.min.js') }}"></script>
     <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jPages.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
-        $(function() {
-            $('#myFilter').mixItUp();
+        var pagination = $('.pagination');
+
+        function setPagination(){
+            pagination.jPages({
+                containerID: 'myFilter',
+                perPage: 6,
+                startPage: 1,
+                startRange: 1,
+                midRange: 3,
+                endRange: 1,
+                first: false,
+                last: false,
+                animation   : "bounceInUp",
+                callback : function( pages, items ){
+                    document.querySelector('.jp-previous').innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
+                    `;
+                    document.querySelector('.jp-next').innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>
+                    `;
+                },
+            });
+        }
+
+        function destroyPagination() {
+            pagination.jPages('destroy');
+        };
+
+        setPagination();
+
+        $('#myFilter').mixItUp({
+            callbacks: {
+                onMixLoad: function(state,futureState ){
+                    console.log('mix Loaded');
+                    //setPagination();
+
+                },
+                onMixStart: function(state,futureState ){
+                    destroyPagination();
+                },
+                onMixEnd: function(state, futureState){
+                    console.log('mix End');
+                     setPagination();
+                }
+            }
         });
+
     </script>
 </body>
 
