@@ -103,12 +103,12 @@
                             <span>Settings</span>
                         </a>
                     </li>
-                    <li class="{{areActiveRoutes(['about.*'])}}">
+                    {{-- <li class="{{areActiveRoutes(['about.*'])}}">
                         <a href="{{route("about.index")}}" >
                             <i class="fas fa-info-circle"></i>
                             <span>About</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="{{areActiveRoutes(['seos.*'])}}">
                         <a href="{{route("seos.index")}}" >
                             <i class="fas fa-search"></i>
