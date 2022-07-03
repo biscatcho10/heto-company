@@ -17,7 +17,7 @@
     <div class="col-sm-12">
         <div class="form-group">
             {{ form::label('title', 'Description') }}
-            {{ form::textarea('desc', $product->desc, ['class' => 'form-control', 'placeholder' => 'Description', 'rows' => '3']) }}
+            {{ form::textarea('desc', $product->desc, ['class' => 'form-control', 'placeholder' => 'Description', 'rows' => '3', 'maxlength' => '134']) }}
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <header id="top" class="header-home">
     <div class="vertical-panel-top">
-        <a href="#top" class="logo_header">
+        <a href="{{ route('home') }}" class="logo_header">
             <img src="{{ intval($settings['logo']) != 0 ? asset('heto/gallery/' . get_file_name(intval($settings['logo']))) : asset($settings['logo']) }}" alt="" />
         </a>
     </div>

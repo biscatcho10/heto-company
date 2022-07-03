@@ -42,7 +42,7 @@ class ProductsController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'desc' => 'nullable|string',
+            'desc' => 'nullable|string|max:134',
             'image' => 'required|image',
             'file' => 'required|file|mimes:pdf',
         ]);
@@ -88,7 +88,7 @@ class ProductsController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'desc' => 'nullable|string',
+            'desc' => 'nullable|string|max:134',
             'image' => 'nullable|image',
             'file' => 'nullable|file|mimes:pdf',
         ]);
